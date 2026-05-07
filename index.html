@@ -211,6 +211,199 @@
     .profile-grid { grid-template-columns: 1fr; gap: 36px; }
   }
 
+  /* ── FACT TILE GRID ── */
+  .fact-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 14px; margin: 32px 0 56px;
+  }
+  .fact-tile {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--crimson);
+    padding: 22px 22px 20px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 10px rgba(28,28,46,0.04);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .fact-tile.navy { border-top-color: var(--navy); }
+  .fact-tile.olive { border-top-color: var(--olive); }
+  .fact-tile.teal { border-top-color: var(--teal); }
+  .fact-tile.gold { border-top-color: var(--gold); }
+  .fact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 900;
+    color: var(--navy-deep); line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .fact-num em { font-style: italic; color: var(--crimson); font-weight: 700; }
+  .fact-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-lt); font-weight: 700; margin-bottom: 2px;
+  }
+  .fact-desc {
+    font-size: 12.5px; color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  /* ── KNMS GROWTH CHART ── */
+  .chart-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px 30px 22px;
+    box-shadow: 0 2px 12px rgba(28,28,46,0.04);
+    margin-bottom: 32px;
+  }
+  .chart-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--crimson); font-weight: 700; margin-bottom: 6px;
+  }
+  .chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--navy-deep); line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .chart-sub {
+    font-size: 13px; color: var(--text-mid);
+    margin-bottom: 18px; line-height: 1.5;
+  }
+  .knms-chart { width: 100%; height: auto; display: block; }
+  .chart-legend {
+    display: flex; gap: 24px; align-items: center;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px; letter-spacing: 0.06em;
+    color: var(--text-mid);
+  }
+  .legend-swatch {
+    display: inline-block; width: 14px; height: 12px;
+    margin-right: 8px; vertical-align: middle;
+    border-radius: 2px;
+  }
+  .legend-swatch.y1 { background: #b9c2d6; }
+  .legend-swatch.y2 { background: var(--crimson); }
+  .chart-source {
+    margin-left: auto;
+    font-style: italic;
+    color: var(--text-lt);
+  }
+
+  /* Profile bottom row: chart + sidebar */
+  .profile-bottom {
+    display: grid; grid-template-columns: 1.5fr 1fr;
+    gap: 32px; align-items: start;
+  }
+  @media (max-width: 900px) {
+    .fact-grid { grid-template-columns: 1fr 1fr; }
+    .profile-bottom { grid-template-columns: 1fr; }
+  }
+
+  /* ── PROFILE ASIDE STACK ── */
+  .profile-aside-col {
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .profile-side.operating-profile {
+    border-left-color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--navy);
+    box-shadow: 0 2px 12px rgba(28,28,46,0.04);
+  }
+  .operating-profile .op-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--navy); font-weight: 600; margin-bottom: 6px;
+  }
+  .operating-profile h3 { margin-bottom: 6px; font-size: 21px; }
+  .operating-profile .op-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 14px;
+    color: var(--text-mid); margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .superpowers { list-style: none; margin-bottom: 22px; }
+  .superpowers li {
+    display: grid; grid-template-columns: 28px 1fr; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .superpowers li:last-child { border-bottom: none; }
+  .sp-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; font-weight: 600; color: var(--crimson);
+    padding-top: 2px;
+  }
+  .sp-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--navy-deep); margin-bottom: 2px; line-height: 1.3;
+  }
+  .sp-desc {
+    font-size: 12.5px; color: var(--text-mid);
+    line-height: 1.55;
+  }
+  .op-stats {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px;
+  }
+  .op-stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-lt); margin-bottom: 2px;
+  }
+  .op-stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: var(--navy-deep); line-height: 1.15;
+  }
+  .op-stat-sub {
+    font-size: 11px; color: var(--text-mid);
+    line-height: 1.4;
+  }
+  .op-bar-row {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+  }
+  .op-bar {
+    display: grid; grid-template-columns: 90px 1fr 36px; gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .op-bar-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; color: var(--navy-deep); font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .op-bar-track {
+    height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden;
+  }
+  .op-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--navy), var(--crimson));
+    border-radius: 3px;
+  }
+  .op-bar-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px; color: var(--text-mid); text-align: right; font-weight: 600;
+  }
+  .op-source {
+    margin-top: 16px; padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; color: var(--text-lt);
+    letter-spacing: 0.04em; line-height: 1.5;
+    font-style: italic;
+  }
+
   /* ── BUILT WORK CARDS ── */
   .built-section { background: var(--sand-lt); }
   .work-card {
@@ -297,6 +490,296 @@
     .work-card { padding: 28px 24px; }
   }
 
+  /* ── COMPACT CARD CONTENT ── */
+  .card-summary {
+    font-size: 15px; line-height: 1.65;
+    color: var(--text-mid);
+    margin: 14px 0 18px;
+  }
+  .card-summary strong { color: var(--navy-deep); }
+
+  .card-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .card-stat {
+    background: var(--sand-lt);
+    padding: 14px 16px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .card-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 800;
+    color: var(--navy-deep); line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+  .card-stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-lt);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .card-chip-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-lt); font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .card-chips {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 6px;
+  }
+  .card-chip {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--navy-deep);
+    background: var(--sand-lt);
+    border: 1px solid var(--rule);
+    padding: 5px 11px;
+    border-radius: 12px;
+    line-height: 1.3;
+  }
+
+  /* Compact 4-cell case grid (Challenge / Action / Result / Translation) */
+  .case-grid-4 {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
+    margin: 14px 0 14px;
+  }
+  .case-cell {
+    background: var(--white);
+    padding: 18px 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .case-cell-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .case-cell.challenge .case-cell-label { color: var(--crimson); }
+  .case-cell.action .case-cell-label    { color: var(--navy); }
+  .case-cell.result .case-cell-label    { color: var(--olive); }
+  .case-cell.translation .case-cell-label { color: var(--teal); }
+  .case-cell-text {
+    font-size: 12.5px; line-height: 1.55;
+    color: var(--text);
+  }
+  .case-cell ul {
+    list-style: none; margin: 0; padding: 0;
+  }
+  .case-cell ul li {
+    font-size: 12.5px; line-height: 1.55;
+    color: var(--text); padding: 4px 0 4px 12px;
+    position: relative;
+  }
+  .case-cell ul li::before {
+    content: ""; position: absolute; left: 0; top: 11px;
+    width: 4px; height: 4px;
+    background: currentColor; opacity: 0.5;
+    border-radius: 50%;
+  }
+
+  /* ── STEM / NGSS VISUAL CARDS ── */
+  .stem-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin: 18px 0 6px;
+  }
+  .stem-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .stem-card-header {
+    padding: 16px 22px;
+    background: var(--sand-lt);
+    border-bottom: 1px solid var(--rule);
+  }
+  .stem-card-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); font-weight: 700; margin-bottom: 4px;
+  }
+  .stem-card.olive .stem-card-eyebrow { color: var(--olive); }
+  .stem-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: var(--navy-deep); line-height: 1.25;
+  }
+  .stem-icon-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; flex: 1;
+    background: var(--rule);
+  }
+  .stem-icon-row.four-col { grid-template-columns: repeat(4, 1fr); }
+  .stem-icon-cell {
+    background: var(--white);
+    padding: 22px 14px 18px;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 8px;
+  }
+  .stem-icon-svg {
+    width: 44px; height: 44px;
+    color: var(--teal);
+  }
+  .stem-card.olive .stem-icon-svg { color: var(--olive); }
+  .stem-icon-name {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11.5px; font-weight: 700;
+    color: var(--navy-deep);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  .stem-icon-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 0.06em;
+    color: var(--text-lt);
+    line-height: 1.4;
+  }
+  .stem-card-footer {
+    padding: 12px 22px;
+    border-top: 1px solid var(--rule);
+    font-size: 12.5px; line-height: 1.55;
+    color: var(--text-mid);
+    background: var(--white);
+  }
+  .stem-card-footer strong { color: var(--navy-deep); }
+  @media (max-width: 720px) {
+    .stem-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── BEFORE / AFTER REDESIGN COMPARISON ── */
+  .redesign-block {
+    margin-top: 18px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .redesign-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--sand-lt);
+    border-bottom: 1px solid var(--rule);
+  }
+  .redesign-tab {
+    padding: 14px 22px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  .redesign-tab.before {
+    color: var(--text-mid); border-right: 1px solid var(--rule);
+  }
+  .redesign-tab.after {
+    color: var(--olive); background: rgba(61, 90, 42, 0.06);
+  }
+  .redesign-tab-meta {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px; font-weight: 500; font-style: italic;
+    color: var(--text-lt); letter-spacing: 0.02em;
+    text-transform: none; margin-left: 8px;
+  }
+  .redesign-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--rule);
+    gap: 1px;
+  }
+  .redesign-col {
+    background: var(--white);
+    padding: 18px 22px 18px;
+  }
+  .redesign-col.after { background: rgba(61, 90, 42, 0.03); }
+  .redesign-col ul {
+    list-style: none; margin: 0; padding: 0;
+  }
+  .redesign-col ul li {
+    font-size: 13px; line-height: 1.55;
+    color: var(--text);
+    padding: 6px 0 6px 16px;
+    position: relative;
+  }
+  .redesign-col.before ul li::before {
+    content: "—";
+    position: absolute; left: 0; top: 6px;
+    color: var(--text-lt); font-weight: 600;
+  }
+  .redesign-col.after ul li::before {
+    content: "+";
+    position: absolute; left: 0; top: 6px;
+    color: var(--olive); font-weight: 700;
+  }
+  .redesign-col strong { color: var(--navy-deep); }
+  .redesign-caption {
+    background: var(--sand-lt);
+    border-top: 1px solid var(--rule);
+    padding: 10px 22px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.06em;
+    color: var(--text-lt); font-style: italic;
+  }
+  @media (max-width: 720px) {
+    .redesign-header { grid-template-columns: 1fr; }
+    .redesign-grid { grid-template-columns: 1fr; }
+    .redesign-tab.before { border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+
+  /* Tool callout for live tools embedded in cases */
+  .tool-callout {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 24px; align-items: center;
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 22px 26px;
+    border-radius: 4px;
+    margin: 20px 0 6px;
+    border-top: 3px solid var(--gold);
+  }
+  .tool-callout-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 4px;
+  }
+  .tool-callout-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px; font-weight: 700;
+    color: var(--white); line-height: 1.25; margin-bottom: 6px;
+  }
+  .tool-callout-desc {
+    font-size: 13px; line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+  }
+  .tool-callout-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold);
+    color: var(--navy-deep) !important;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 12px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .tool-callout-cta:hover {
+    background: #e8c781;
+    color: var(--navy-deep) !important;
+  }
+  @media (max-width: 820px) {
+    .card-stats { grid-template-columns: 1fr 1fr; }
+    .case-grid-4 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    .tool-callout { grid-template-columns: 1fr; gap: 14px; }
+  }
+
   /* ── CASE STUDY blocks ── */
   .case-block { margin-top: 16px; }
   .case-label {
@@ -307,6 +790,227 @@
   .case-block.translation .case-label { color: var(--teal); }
   .case-block .case-text { font-size: 15px; line-height: 1.75; color: var(--text); }
   .case-block.translation .case-text { font-style: italic; color: var(--text-mid); }
+
+  /* ── RESULTS DATA VISUAL ── */
+  .results-data { margin: 14px 0 18px; }
+  .results-headline {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .results-headline-cell {
+    background: var(--white);
+    padding: 18px 22px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .rh-subject {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-lt); font-weight: 700;
+  }
+  .rh-delta {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px; font-weight: 900;
+    color: var(--olive); line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin: 4px 0 2px;
+  }
+  .rh-detail {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px; color: var(--text-mid);
+  }
+  .results-table {
+    width: 100%; border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
+    font-size: 13.5px;
+  }
+  .results-table th {
+    background: var(--sand-lt);
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-mid); font-weight: 700;
+    border-bottom: 1px solid var(--rule);
+  }
+  .results-table td {
+    padding: 9px 16px;
+    border-top: 1px solid var(--rule);
+    color: var(--text);
+  }
+  .results-table td:first-child {
+    font-weight: 600; color: var(--navy-deep);
+  }
+  .results-table td:nth-child(2),
+  .results-table td:nth-child(3),
+  .results-table td:nth-child(4) {
+    font-family: 'DM Mono', monospace; font-size: 12.5px;
+  }
+  .results-table td.delta-pos { color: var(--olive); font-weight: 700; }
+  .results-table td.delta-zero { color: var(--text-lt); font-weight: 600; }
+  .results-table td.delta-strong { color: var(--olive); font-weight: 700; }
+  .results-table td.delta-strong::after { content: " ★"; color: var(--gold); }
+  .results-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.06em;
+    color: var(--text-lt); margin-top: 10px;
+    font-style: italic;
+  }
+  @media (max-width: 720px) {
+    .results-headline { grid-template-columns: 1fr; }
+    .results-table { font-size: 12px; }
+    .results-table td, .results-table th { padding: 8px 10px; }
+  }
+
+  /* ── TEACHING SAMPLE ── */
+  .teaching-section { background: var(--white); }
+  .lesson-meta {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin: 16px 0 36px;
+    overflow: hidden;
+  }
+  .lm-cell { background: var(--sand-lt); padding: 18px 20px; }
+  .lm-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-lt); margin-bottom: 6px; font-weight: 600;
+  }
+  .lm-val { font-size: 13.5px; color: var(--navy-deep); line-height: 1.5; font-weight: 500; }
+  .lesson-cols-header {
+    display: grid; grid-template-columns: 100px 1fr 1fr; gap: 24px;
+    margin: 8px 0; align-items: end;
+  }
+  .lc-head {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding-bottom: 8px;
+  }
+  .lc-head-lesson { color: var(--navy); border-bottom: 2px solid var(--navy); }
+  .lc-head-design { color: var(--crimson); border-bottom: 2px solid var(--crimson); }
+  .lesson-stage {
+    display: grid; grid-template-columns: 100px 1fr 1fr; gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .lesson-stage:last-of-type { border-bottom: none; }
+  .ls-time-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px; font-weight: 700;
+    color: var(--navy-deep); line-height: 1;
+  }
+  .ls-time-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--crimson); font-weight: 600; margin-top: 6px; line-height: 1.4;
+  }
+  .ls-lesson {
+    background: var(--sand-lt);
+    border-left: 3px solid var(--navy);
+    padding: 20px 24px;
+    border-radius: 0 4px 4px 0;
+  }
+  .ls-lesson p {
+    font-size: 15px; line-height: 1.75; color: var(--text);
+    margin-bottom: 12px;
+  }
+  .ls-lesson p:last-child { margin-bottom: 0; }
+  .ls-lesson strong { color: var(--navy-deep); }
+  .ls-quiz {
+    margin-top: 14px;
+    background: var(--white);
+    border: 1px dashed rgba(44, 62, 107, 0.3);
+    padding: 16px 18px;
+    border-radius: 4px;
+  }
+  .ls-quiz-q {
+    font-weight: 600; color: var(--navy-deep);
+    margin-bottom: 10px; font-size: 14px;
+  }
+  .ls-quiz-opts {
+    list-style: none; margin: 0; padding: 0;
+    font-size: 14px; color: var(--text-mid);
+  }
+  .ls-quiz-opts li {
+    padding: 5px 0;
+    display: grid; grid-template-columns: 22px 1fr; gap: 6px;
+  }
+  .opt-letter {
+    font-family: 'DM Mono', monospace;
+    font-weight: 700; color: var(--navy);
+  }
+  .ls-quiz-correct {
+    margin-top: 12px; padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--olive); font-weight: 600;
+  }
+  .ls-design {
+    background: rgba(139, 26, 46, 0.04);
+    border-left: 3px solid var(--crimson);
+    padding: 20px 24px;
+    border-radius: 0 4px 4px 0;
+  }
+  .ls-design-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--crimson); font-weight: 700; margin-bottom: 6px;
+  }
+  .ls-design-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--navy-deep); margin-bottom: 10px; line-height: 1.3;
+  }
+  .ls-design p {
+    font-size: 13.5px; line-height: 1.7; color: var(--text-mid);
+    margin: 0;
+    font-style: italic;
+  }
+  .ls-design p strong { color: var(--navy-deep); font-style: normal; }
+  .lesson-footer {
+    margin-top: 32px;
+    padding: 22px 28px;
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.85);
+    border-radius: 4px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .lesson-footer strong { color: var(--white); font-weight: 700; display: block; margin-bottom: 4px; font-family: 'Playfair Display', serif; font-size: 16px; }
+  @media (max-width: 820px) {
+    .lesson-meta { grid-template-columns: 1fr 1fr; }
+    .lesson-cols-header { display: none; }
+    .lesson-stage {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 22px 0;
+    }
+    .ls-time { display: flex; gap: 14px; align-items: baseline; }
+    .ls-time-val { font-size: 24px; }
+    .ls-time-label { margin-top: 0; }
+    .ls-lesson::before {
+      content: 'The Lesson';
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); font-weight: 700; margin-bottom: 10px;
+    }
+    .ls-design::before {
+      content: 'Inside the Design';
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--crimson); font-weight: 700; margin-bottom: 10px;
+    }
+  }
 
   /* ── PHILOSOPHY ── */
   .philosophy-section { background: var(--white); }
@@ -334,8 +1038,83 @@
     .philosophy-grid { grid-template-columns: 1fr; }
   }
 
-  /* ── TRANSLATION TABLE ── */
+  /* ── TRANSLATION SECTION ── */
   .translation-section { background: var(--sand-lt); }
+
+  /* Value proposition 3-column block */
+  .vprop-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin: 16px 0 56px;
+  }
+  .vprop-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--crimson);
+    padding: 28px 28px 24px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 12px rgba(28,28,46,0.04);
+  }
+  .vprop-card.navy { border-top-color: var(--navy); }
+  .vprop-card.olive { border-top-color: var(--olive); }
+  .vprop-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--crimson); margin-bottom: 10px; font-weight: 700;
+  }
+  .vprop-card.navy .vprop-eyebrow { color: var(--navy); }
+  .vprop-card.olive .vprop-eyebrow { color: var(--olive); }
+  .vprop-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px; font-weight: 700;
+    color: var(--navy-deep); margin-bottom: 16px; line-height: 1.25;
+  }
+  .vprop-card ul { list-style: none; }
+  .vprop-card ul li {
+    font-size: 14px; line-height: 1.65;
+    color: var(--text-mid); padding: 8px 0;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 18px 1fr; gap: 8px;
+  }
+  .vprop-card ul li:first-child { border-top: none; padding-top: 4px; }
+  .vprop-card ul li::before {
+    content: ""; display: block; width: 8px; height: 8px;
+    background: currentColor; opacity: 0.4; border-radius: 50%;
+    margin-top: 7px;
+  }
+  .vprop-card strong { color: var(--navy-deep); font-weight: 700; }
+
+  /* Big stat callout */
+  .vprop-stat-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 56px;
+  }
+  .vprop-stat {
+    background: var(--white);
+    padding: 24px 22px;
+    text-align: left;
+  }
+  .vprop-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px; font-weight: 900;
+    color: var(--navy-deep);
+    line-height: 1; margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .vprop-stat-num em { color: var(--crimson); font-style: italic; }
+  .vprop-stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-lt); font-weight: 600; margin-bottom: 6px;
+  }
+  .vprop-stat-desc {
+    font-size: 12px; color: var(--text-mid);
+    line-height: 1.5;
+  }
+
   .translation-table {
     width: 100%;
     border-collapse: collapse;
@@ -369,30 +1148,64 @@
   .translation-table td:last-child { color: var(--text-mid); }
   .translation-table tr:nth-child(even) td:first-child { background: rgba(245, 240, 232, 0.5); }
 
-  /* ── COMPETENCIES ── */
-  .competency-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 40px;
-    row-gap: 4px;
-    margin-top: 32px;
+  /* ── COMPETENCY CLUSTERS ── */
+  .competency-clusters {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px; margin-top: 36px;
   }
-  .competency-tile {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 15px; font-weight: 500;
-    color: var(--navy-deep);
-    padding: 10px 0;
-    text-align: left;
+  .cluster-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px 30px;
+    display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;
   }
-  .competency-tile::before {
-    content: "·";
-    color: var(--crimson);
-    margin-right: 10px;
+  .cluster-icon {
+    width: 52px; height: 52px;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .cluster-icon svg { width: 28px; height: 28px; }
+  .cluster-card.crimson .cluster-icon { background: rgba(139, 26, 46, 0.10); color: var(--crimson); }
+  .cluster-card.navy .cluster-icon { background: rgba(26, 37, 71, 0.08); color: var(--navy-deep); }
+  .cluster-card.olive .cluster-icon { background: rgba(61, 90, 42, 0.10); color: var(--olive); }
+  .cluster-card.teal .cluster-icon { background: rgba(13, 110, 110, 0.10); color: var(--teal); }
+  .cluster-card.gold .cluster-icon { background: rgba(212, 160, 23, 0.16); color: #8a6f1f; }
+  .cluster-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
     font-weight: 700;
-    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .cluster-card.crimson .cluster-eyebrow { color: var(--crimson); }
+  .cluster-card.navy .cluster-eyebrow { color: var(--navy); }
+  .cluster-card.olive .cluster-eyebrow { color: var(--olive); }
+  .cluster-card.teal .cluster-eyebrow { color: var(--teal); }
+  .cluster-card.gold .cluster-eyebrow { color: #8a6f1f; }
+  .cluster-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--navy-deep); margin-bottom: 12px; line-height: 1.25;
+  }
+  .cluster-list {
+    list-style: none; display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .cluster-list li {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12.5px; font-weight: 500;
+    color: var(--navy-deep);
+    padding: 5px 10px;
+    background: var(--sand-lt);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    line-height: 1.3;
   }
   @media (max-width: 720px) {
-    .competency-grid { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+    .vprop-grid { grid-template-columns: 1fr; }
+    .vprop-stat-row { grid-template-columns: 1fr 1fr; }
+    .competency-clusters { grid-template-columns: 1fr; }
+    .cluster-card { padding: 22px 22px; }
   }
 
   /* ── CONTACT ── */
@@ -503,8 +1316,9 @@
   <ul class="nav-links">
     <li><a href="#profile">Profile</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#teaching">Teaching</a></li>
     <li><a href="#track-record">Track Record</a></li>
-    <li><a href="#philosophy">How I Work</a></li>
+    <li><a href="#translation">Translation</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -513,7 +1327,7 @@
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-eyebrow">Professional Portfolio · 2026</div>
-    <h1>A practitioner who builds the systems she <em>leads</em>.</h1>
+    <h1>Designing Learning Experiences That Drive Results — <em>In Classrooms and Organizations.</em></h1>
     <p class="hero-tagline">15+ years of measurable performance results across complex K–12 organizations — paired with the systems thinking and learning design depth that EdTech, L&amp;D, and consulting environments need.</p>
     <div class="hero-pills">
       <span class="hero-pill">K–12 Instructional Leadership</span>
@@ -535,29 +1349,186 @@
 <section class="profile-section" id="profile">
   <div class="section-inner">
     <div class="section-label">The Profile</div>
-    <h2 class="section-title">15+ years across California and South Carolina, built around one question: <em>what does this do for student learning?</em></h2>
-    <div class="profile-grid">
-      <div>
-        <p>Nicole Simmons is a K–12 instructional leader and learning designer with a track record of moving the numbers that matter — student outcomes, instructional consistency, and operational coherence — across the full range of K–12 environments: <strong>Title I and private, classroom and district office, founding teams and turnaround sites</strong>.</p>
-        <p>Her career arc — classroom teacher → instructional coach → TOSA → curriculum designer → inaugural Assistant Principal — reflects a deliberate move toward leverage: <strong>spending fewer years working harder, and more years designing better systems</strong> for the people doing the work.</p>
-        <p>Outside of full-time roles, she maintains an independent research and design portfolio used to keep skills sharp, prototype AI-enabled tools, publish original research, and showcase design work. The portfolio includes three self-published white papers, a self-built diagnostic prototype, and a research-cited MTSS framework. <em>It exists to demonstrate capability — not to compete with a prospective employer's time or focus.</em></p>
+    <h2 class="section-title">Numbers moved. Systems built. Tools shipped. <em>Across founding teams, turnarounds, and program leadership.</em></h2>
+    <p class="section-lead">K–12 instructional leader and learning designer with measurable outcomes across Title I and private, classroom and district office, school sites and a residential STEM program — paired with an active independent practice in research, AI integration, and learning design.</p>
+
+    <div class="fact-grid">
+      <div class="fact-tile">
+        <div class="fact-label">Experience</div>
+        <div class="fact-num">15<em>+</em> years</div>
+        <div class="fact-desc">K–12 instructional leadership in California.</div>
       </div>
-      <aside class="profile-side">
-        <h3>What I do</h3>
-        <ul>
+      <div class="fact-tile navy">
+        <div class="fact-label">Career arc</div>
+        <div class="fact-num">5 roles</div>
+        <div class="fact-desc">Teacher → Coach → TOSA → Designer → Inaugural AP.</div>
+      </div>
+      <div class="fact-tile olive">
+        <div class="fact-label">Founding teams</div>
+        <div class="fact-num">2 schools</div>
+        <div class="fact-desc">Inaugural staff for two California middle schools.</div>
+      </div>
+      <div class="fact-tile teal">
+        <div class="fact-label">University partner</div>
+        <div class="fact-num">CSUCI</div>
+        <div class="fact-desc">DISCOVER Academy · Newbury Park · cross-curricular.</div>
+      </div>
+      <div class="fact-tile">
+        <div class="fact-label">Independent research</div>
+        <div class="fact-num">3 papers</div>
+        <div class="fact-desc">Self-published white papers, openly licensed.</div>
+      </div>
+      <div class="fact-tile gold">
+        <div class="fact-label">Live tools</div>
+        <div class="fact-num">4<em>+</em> shipped</div>
+        <div class="fact-desc">AI diagnostics, walkthrough tool, MTSS placemat.</div>
+      </div>
+      <div class="fact-tile olive">
+        <div class="fact-label">Recognition</div>
+        <div class="fact-num">CA Distinguished</div>
+        <div class="fact-desc">School recognition · Title I · ~1,000 students.</div>
+      </div>
+      <div class="fact-tile navy">
+        <div class="fact-label">Credentialed</div>
+        <div class="fact-num">CA <em>+</em> SC</div>
+        <div class="fact-desc">Multi-state K–12 credentials · Title I and private experience.</div>
+      </div>
+    </div>
+
+    <div class="profile-bottom">
+      <div class="chart-card">
+        <div class="chart-eyebrow">KNMS · Two-Year Window on the Admin Team</div>
+        <div class="chart-title">Schoolwide academic growth — Year 1 to Year 2.</div>
+        <div class="chart-sub">California state assessments (CAASPP &amp; CAST), measured as % of students meeting or exceeding grade-level standards. Two-year window matches Nicole's tenure on the Kathryn Newport Middle School admin team.</div>
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" class="knms-chart" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Schoolwide academic growth bar chart showing ELA, Math, and Science gains from Year 1 to Year 2 at KNMS">
+          <!-- Y-axis grid lines -->
+          <g stroke="#e8e9ec" stroke-width="1" fill="none">
+            <line x1="80" y1="100" x2="660" y2="100"/>
+            <line x1="80" y1="140" x2="660" y2="140"/>
+            <line x1="80" y1="180" x2="660" y2="180"/>
+            <line x1="80" y1="220" x2="660" y2="220"/>
+            <line x1="80" y1="260" x2="660" y2="260"/>
+          </g>
+          <!-- Baseline -->
+          <line x1="80" y1="300" x2="660" y2="300" stroke="#1a2547" stroke-width="1.5"/>
+          <!-- Y axis labels -->
+          <g font-family="DM Mono, monospace" font-size="10" fill="#7a7a8a" text-anchor="end">
+            <text x="72" y="304">0%</text>
+            <text x="72" y="264">10%</text>
+            <text x="72" y="224">20%</text>
+            <text x="72" y="184">30%</text>
+            <text x="72" y="144">40%</text>
+            <text x="72" y="104">50%</text>
+          </g>
+
+          <!-- ELA group -->
+          <rect x="116" y="124" width="56" height="176" fill="#b9c2d6" rx="2"/>
+          <rect x="180" y="103" width="56" height="197" fill="#8b1a2e" rx="2"/>
+          <text x="144" y="118" font-family="DM Mono, monospace" font-size="11" fill="#1a2547" text-anchor="middle" font-weight="600">44%</text>
+          <text x="208" y="97" font-family="DM Mono, monospace" font-size="11" fill="#8b1a2e" text-anchor="middle" font-weight="700">49.2%</text>
+          <rect x="138" y="60" width="76" height="24" rx="12" fill="#3d5a2a"/>
+          <text x="176" y="76" font-family="DM Mono, monospace" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">+5.2%</text>
+          <text x="176" y="324" font-family="Playfair Display, serif" font-size="15" fill="#1a2547" text-anchor="middle" font-weight="700">ELA</text>
+          <text x="176" y="342" font-family="Source Sans 3, sans-serif" font-size="10" fill="#7a7a8a" text-anchor="middle">Language Arts · all grades</text>
+
+          <!-- Math group -->
+          <rect x="310" y="188" width="56" height="112" fill="#b9c2d6" rx="2"/>
+          <rect x="374" y="152" width="56" height="148" fill="#8b1a2e" rx="2"/>
+          <text x="338" y="182" font-family="DM Mono, monospace" font-size="11" fill="#1a2547" text-anchor="middle" font-weight="600">28%</text>
+          <text x="402" y="146" font-family="DM Mono, monospace" font-size="11" fill="#8b1a2e" text-anchor="middle" font-weight="700">37%</text>
+          <rect x="332" y="60" width="76" height="24" rx="12" fill="#3d5a2a"/>
+          <text x="370" y="76" font-family="DM Mono, monospace" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">+11%</text>
+          <text x="370" y="324" font-family="Playfair Display, serif" font-size="15" fill="#1a2547" text-anchor="middle" font-weight="700">Math</text>
+          <text x="370" y="342" font-family="Source Sans 3, sans-serif" font-size="10" fill="#7a7a8a" text-anchor="middle">Mathematics · all grades</text>
+
+          <!-- Science group -->
+          <rect x="504" y="192" width="56" height="108" fill="#b9c2d6" rx="2"/>
+          <rect x="568" y="132" width="56" height="168" fill="#8b1a2e" rx="2"/>
+          <text x="532" y="186" font-family="DM Mono, monospace" font-size="11" fill="#1a2547" text-anchor="middle" font-weight="600">27%</text>
+          <text x="596" y="126" font-family="DM Mono, monospace" font-size="11" fill="#8b1a2e" text-anchor="middle" font-weight="700">42%</text>
+          <rect x="526" y="60" width="76" height="24" rx="12" fill="#3d5a2a"/>
+          <text x="564" y="76" font-family="DM Mono, monospace" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">+15%</text>
+          <text x="564" y="324" font-family="Playfair Display, serif" font-size="15" fill="#1a2547" text-anchor="middle" font-weight="700">Science</text>
+          <text x="564" y="342" font-family="Source Sans 3, sans-serif" font-size="10" fill="#7a7a8a" text-anchor="middle">CAST · grade 8</text>
+        </svg>
+        <div class="chart-legend">
+          <span><span class="legend-swatch y1"></span>Year 1 · 2023/24</span>
+          <span><span class="legend-swatch y2"></span>Year 2 · 2024/25</span>
+          <span class="chart-source">Source · KNMS CAASPP &amp; CAST · % met / exceeded</span>
+        </div>
+      </div>
+
+      <aside class="profile-side operating-profile" style="border-left:none; padding-top:0;">
+        <div class="op-eyebrow">Operating Profile</div>
+        <h3>Who I am.</h3>
+        <p class="op-tagline">Visionary architect. Systems builder. Direct truth-teller. — backed by a recent professional personality assessment.</p>
+
+        <ul class="superpowers">
           <li>
-            <span><strong>Diagnose</strong>structural issues in K–12 systems using research-grounded analysis — not anecdote, not optics.</span>
+            <div class="sp-num">01</div>
+            <div>
+              <div class="sp-name">The Systems Alchemist</div>
+              <div class="sp-desc">Takes chaotic, inefficient processes and transforms them into streamlined, repeatable workflows. Strongest during overhauls, migrations, or any project requiring optimization of complex organizational structures.</div>
+            </div>
           </li>
           <li>
-            <span><strong>Design</strong>frameworks, tools, and learning experiences that align curriculum, instruction, and support around measurable outcomes.</span>
+            <div class="sp-num">02</div>
+            <div>
+              <div class="sp-name">The Direct Truth-Teller</div>
+              <div class="sp-desc">Cuts through politics and addresses problems head-on with zero ego. Provides the psychological safety that comes from radical transparency — the person teams rely on to say what needs to be said <em>in a way that can be received</em>.</div>
+            </div>
           </li>
           <li>
-            <span><strong>Build</strong>shipped artifacts — white papers, diagnostic tools, web platforms, professional learning — not just slide decks.</span>
-          </li>
-          <li>
-            <span><strong>Coach</strong>leaders and teams through the work, with the professional courage to stay in the room when the answer is uncomfortable.</span>
+            <div class="sp-num">03</div>
+            <div>
+              <div class="sp-name">The Insightful Capacity Builder</div>
+              <div class="sp-desc">Doesn't just solve problems — teaches others how to solve them. Builds learning experiences that leave teams more capable and self-sufficient than they were found.</div>
+            </div>
           </li>
         </ul>
+
+        <div class="op-stats">
+          <div>
+            <div class="op-stat-label">MBTI</div>
+            <div class="op-stat-val">ENTJ</div>
+            <div class="op-stat-sub">"The Commander"</div>
+          </div>
+          <div>
+            <div class="op-stat-label">Holland Code</div>
+            <div class="op-stat-val">IRS</div>
+            <div class="op-stat-sub">Investigative · Realistic · Social</div>
+          </div>
+
+          <div class="op-bar-row">
+            <div class="op-bar">
+              <div class="op-bar-label">Investigative</div>
+              <div class="op-bar-track"><div class="op-bar-fill" style="width: 100%;"></div></div>
+              <div class="op-bar-val">100</div>
+            </div>
+            <div class="op-bar">
+              <div class="op-bar-label">Conscientious</div>
+              <div class="op-bar-track"><div class="op-bar-fill" style="width: 92%;"></div></div>
+              <div class="op-bar-val">92</div>
+            </div>
+            <div class="op-bar">
+              <div class="op-bar-label">Extraversion</div>
+              <div class="op-bar-track"><div class="op-bar-fill" style="width: 92%;"></div></div>
+              <div class="op-bar-val">92</div>
+            </div>
+            <div class="op-bar">
+              <div class="op-bar-label">Realistic</div>
+              <div class="op-bar-track"><div class="op-bar-fill" style="width: 83%;"></div></div>
+              <div class="op-bar-val">83</div>
+            </div>
+            <div class="op-bar">
+              <div class="op-bar-label">Thinking</div>
+              <div class="op-bar-track"><div class="op-bar-fill" style="width: 83%;"></div></div>
+              <div class="op-bar-val">83</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="op-source">Source · Apt. AI personality assessment, May 2026 · ENTJ + 100/100 Investigative is a profile estimated at &lt;3% of the population.</div>
       </aside>
     </div>
   </div>
@@ -574,40 +1545,60 @@
     <div class="work-card">
       <div class="work-tag">Personal Portfolio Initiative</div>
       <h3 class="work-title">ForwardEd</h3>
-      <p class="work-subtitle">Independent research and design portfolio · ForwardEd.consulting</p>
-      <p class="work-body">A self-directed, AI-collaborative initiative used to research, prototype, and publish work in K–12 systems thinking and learning design. Designed the brand identity, content strategy, and web platform end-to-end, and produced the full content catalog under personal authorship. The initiative is governed by four operating principles:</p>
-      <ul class="work-list">
-        <li><strong>Evidence over optics</strong> — let the data show what is and isn't working before drawing conclusions.</li>
-        <li><strong>Systems before symptoms</strong> — diagnose structures and processes before assigning blame to individuals.</li>
-        <li><strong>Design to reduce burden</strong> — educator and learner load is usually a system-design problem, not an effort problem.</li>
-        <li><strong>Transparent practice</strong> — every framework, finding, and AI-assisted analysis disclosed openly.</li>
-      </ul>
+      <p class="work-subtitle">Independent K–12 publishing &amp; consulting initiative · ForwardEd.consulting</p>
+      <p class="card-summary">A self-directed initiative designed and built end-to-end — <strong>brand, content strategy, web platform, and full content catalog</strong> under personal authorship.</p>
+      <div class="card-chip-label">Capabilities demonstrated</div>
+      <div class="card-chips">
+        <span class="card-chip">Brand identity</span>
+        <span class="card-chip">Content strategy</span>
+        <span class="card-chip">Web build · Netlify + GitHub</span>
+        <span class="card-chip">AI integration</span>
+        <span class="card-chip">Publication pipeline</span>
+        <span class="card-chip">Self-directed initiative</span>
+      </div>
     </div>
 
     <!-- Cohesion Baseline -->
     <div class="work-card teal">
       <div class="work-tag">Self-Built Prototype · AI-Enabled Diagnostic</div>
       <h3 class="work-title">Cohesion Baseline</h3>
-      <p class="work-subtitle">Diagnostic prototype for K–12 system coherence · ForwardEd.consulting/cohesion-baseline</p>
-      <p class="work-body">A self-built, password-protected diagnostic prototype in early calibration. Designed to surface where curriculum, instruction, and support are — and are not — working coherently as a system. AI provides the analytical lens; the framework provides the structure; the leader supplies judgment about what to act on.</p>
-      <div class="work-callout">
-        <strong>What it demonstrates:</strong> ability to design, build, and ship an AI-enabled product prototype end-to-end — framework design, technical implementation, AI integration, and live deployment behind a portfolio site.
+      <p class="work-subtitle">AI-powered K–12 district diagnostic · ForwardEd.consulting/cohesion-baseline</p>
+      <p class="card-summary">Self-built AI-powered district diagnostic. <strong>Anthropic API + Netlify edge functions</strong> stream structured analysis from cached system prompts. Live in early calibration.</p>
+      <div class="card-stats">
+        <div class="card-stat"><div class="card-stat-num">7</div><div class="card-stat-label">Research dimensions</div></div>
+        <div class="card-stat"><div class="card-stat-num">0–100</div><div class="card-stat-label">Coherence score</div></div>
+        <div class="card-stat"><div class="card-stat-num">995</div><div class="card-stat-label">CA districts preloaded</div></div>
+        <div class="card-stat"><div class="card-stat-num">Live</div><div class="card-stat-label">Production prototype</div></div>
+      </div>
+      <div class="card-chip-label">Capabilities demonstrated</div>
+      <div class="card-chips">
+        <span class="card-chip">Framework design</span>
+        <span class="card-chip">AI integration</span>
+        <span class="card-chip">Edge functions</span>
+        <span class="card-chip">Research-to-product translation</span>
+        <span class="card-chip">Live deployment</span>
       </div>
     </div>
 
-    <!-- White Papers -->
+    <!-- White Papers · reframed as research + writing capability -->
     <div class="work-card olive">
-      <div class="work-tag">Self-Published Research · 2026</div>
-      <h3 class="work-title">White Paper Series</h3>
-      <p class="work-subtitle">Three independently authored papers · ForwardEd.consulting/white-papers</p>
-      <p class="work-body">Original, research-grounded writing produced as personal thought leadership. Each paper builds on the last; together they form a single argument about K–12 structural integrity, intended to inform practitioner thinking and demonstrate research synthesis depth.</p>
-      <ul class="work-list">
-        <li><strong>No. 1 — The Machine Beneath the Mission.</strong> What AI reveals when trained on the full breadth of American education data.</li>
-        <li><strong>No. 2 — Now That You Know, What Will You Do?</strong> A research-grounded argument for whole-system instructional examination, sequenced for action.</li>
-        <li><strong>No. 3 — The Mission on the Wall.</strong> Why districts have missions they don't use, awards that don't mean what they should, and what that costs students.</li>
-      </ul>
-      <div class="work-callout">
-        <strong>AI Transparency:</strong> All work is produced through structured collaboration with Claude (Anthropic). The author owns inquiry, framing, source verification, and final editorial judgment. Every claim is independently cross-referenced before publication.
+      <div class="work-tag">Independent Research Output · 2026</div>
+      <h3 class="work-title">Long-Form Research &amp; Authoring</h3>
+      <p class="work-subtitle">Three published K–12 research papers · ForwardEd.consulting/white-papers</p>
+      <p class="card-summary">Sustained long-form output demonstrating <strong>research synthesis, peer-reviewed source rigor, and AI-collaborative drafting with full transparency</strong>.</p>
+      <div class="card-stats">
+        <div class="card-stat"><div class="card-stat-num">3</div><div class="card-stat-label">Published papers</div></div>
+        <div class="card-stat"><div class="card-stat-num">30+</div><div class="card-stat-label">Peer-reviewed sources</div></div>
+        <div class="card-stat"><div class="card-stat-num">CC</div><div class="card-stat-label">Creative Commons licensed</div></div>
+        <div class="card-stat"><div class="card-stat-num">100%</div><div class="card-stat-label">AI use disclosed</div></div>
+      </div>
+      <div class="card-chip-label">Capabilities demonstrated</div>
+      <div class="card-chips">
+        <span class="card-chip">Research synthesis</span>
+        <span class="card-chip">Long-form authoring</span>
+        <span class="card-chip">Source verification</span>
+        <span class="card-chip">Editorial judgment</span>
+        <span class="card-chip">AI collaboration</span>
       </div>
     </div>
 
@@ -615,31 +1606,213 @@
     <div class="work-card navy">
       <div class="work-tag">Original IP · Research-Cited Framework</div>
       <h3 class="work-title">MTSS Intervention Flowchart, 2026–27</h3>
-      <p class="work-subtitle">Tiered support framework with parallel academic and behavior/SEL lanes</p>
-      <p class="work-body">Designed an integrated, research-cited Multi-Tiered System of Supports framework that runs academic and behavior/SEL interventions <em>in parallel</em> — not as separate fiefdoms. Built around evidence-based thresholds and the principle that data below threshold is a signal to review Tier 1 fidelity, <em>not</em> a referral trigger.</p>
-      <ul class="work-list">
-        <li><strong>80–85% Tier 1 benchmark</strong> — if fewer than 80% of students meet goals, evaluate instruction and curriculum, not students.</li>
-        <li><strong>ICEL root-cause framework</strong> (Instruction, Curriculum, Environment, Learner) drives diagnosis before prescription.</li>
-        <li><strong>Cited research base</strong> — 30+ peer-reviewed sources, including Fuchs &amp; Fuchs (2006), IRIS Center (2022), Zhang et al. (2023), Thomas/Lembke/Gandhi (2023), NCII/AIR (2024).</li>
-      </ul>
-      <div class="artifact-img">
-        <img src="images/mtss-tier1.png" alt="MTSS Intervention Flowchart 2026-27, Tier 1 view: universal supports for all students with parallel academic and behavior/SEL lanes" loading="lazy" />
+      <p class="work-subtitle">Tiered support placemat · parallel academic + behavior/SEL lanes</p>
+      <p class="card-summary">A research-cited, three-tier MTSS framework that runs academic and behavior interventions <strong>in parallel</strong>. Adopted at the school site; now in public release as an open resource.</p>
+      <div class="card-stats">
+        <div class="card-stat"><div class="card-stat-num">3</div><div class="card-stat-label">Tiers · 2 lanes</div></div>
+        <div class="card-stat"><div class="card-stat-num">80%</div><div class="card-stat-label">Tier 1 benchmark</div></div>
+        <div class="card-stat"><div class="card-stat-num">ICEL</div><div class="card-stat-label">Root-cause framework</div></div>
+        <div class="card-stat"><div class="card-stat-num">30+</div><div class="card-stat-label">Cited research sources</div></div>
       </div>
-      <p class="artifact-caption">MTSS Intervention Flowchart, 2026–27 · Tier 1 view (Universal supports)</p>
       <div class="artifact-img">
-        <img src="images/mtss-tier2-3.png" alt="MTSS Intervention Flowchart 2026-27, Tiers 2 and 3 view: strategic and intensive supports with research-cited research base" loading="lazy" />
+        <img src="images/mtss-placemat.png" alt="MTSS Intervention Flowchart 2026-27 placemat: three-tier framework with parallel academic and behavior/SEL lanes" loading="lazy" />
       </div>
-      <p class="artifact-caption">MTSS Intervention Flowchart, 2026–27 · Tiers 2 and 3 (Strategic and Intensive)</p>
+      <p class="artifact-caption">MTSS Intervention Flowchart, 2026–27 · Universal · Strategic · Intensive</p>
     </div>
 
+  </div>
+</section>
+
+<!-- TEACHING SAMPLE -->
+<section class="teaching-section" id="teaching">
+  <div class="section-inner">
+    <div class="section-label">Section 02 · Teaching Sample</div>
+    <h2 class="section-title">MTSS in 8 minutes — <em>and</em> the design rationale beside it.</h2>
+    <p class="section-lead">An annotated micro-lesson showing both halves of learning experience design: <em>the lesson the learner sees</em>, and the <em>design moves</em> behind it. Built for a non-K–12 audience — ed tech PMs, L&amp;D leaders, consultants — who hear "MTSS" and need an accurate mental model fast.</p>
+
+    <div class="lesson-meta">
+      <div class="lm-cell">
+        <div class="lm-label">Learner Profile</div>
+        <div class="lm-val">Ed tech PMs · L&amp;D leads · non-K–12 consultants</div>
+      </div>
+      <div class="lm-cell">
+        <div class="lm-label">Duration</div>
+        <div class="lm-val">8 minutes self-paced</div>
+      </div>
+      <div class="lm-cell">
+        <div class="lm-label">Outcome</div>
+        <div class="lm-val">Hold an accurate MTSS mental model and map its principles to corporate L&amp;D.</div>
+      </div>
+      <div class="lm-cell">
+        <div class="lm-label">Format</div>
+        <div class="lm-val">Annotated walkthrough · 1 formative check · spaced-retrieval close</div>
+      </div>
+    </div>
+
+    <div class="lesson-cols-header">
+      <div></div>
+      <div class="lc-head lc-head-lesson">The Lesson</div>
+      <div class="lc-head lc-head-design">Inside the Design</div>
+    </div>
+
+    <!-- 0:00 Hook -->
+    <div class="lesson-stage">
+      <div>
+        <div class="ls-time-val">0:00</div>
+        <div class="ls-time-label">Hook</div>
+      </div>
+      <div class="ls-lesson">
+        <p>Imagine 100 employees at your company. They all need the same compliance training. Eighty-five pass on the first round. Fifteen don't.</p>
+        <p><strong>Where does the breakdown live?</strong> The default answer is "those 15 people." MTSS — the framework K–12 educators use to organize student support — would tell you to look somewhere else first.</p>
+      </div>
+      <div class="ls-design">
+        <div class="ls-design-tag">Design Move</div>
+        <div class="ls-design-name">Anchor in a learner-relevant scenario.</div>
+        <p>The lesson opens in <strong>corporate context</strong>, not a classroom — because the learner's mental schema for "training" is corporate. <strong>UDL principle:</strong> multiple means of engagement. <strong>Cognitive load principle:</strong> never make the learner translate before they can reason.</p>
+      </div>
+    </div>
+
+    <!-- 1:00 Input 1 -->
+    <div class="lesson-stage">
+      <div>
+        <div class="ls-time-val">1:00</div>
+        <div class="ls-time-label">Input · The 80% Rule</div>
+      </div>
+      <div class="ls-lesson">
+        <p>MTSS starts with one threshold: <strong>Tier 1 — your universal experience — must serve at least 80% of learners well.</strong> If fewer than 80% are succeeding with Tier 1 alone, you do not refer the 20% upward. You diagnose the Tier 1 system itself.</p>
+        <p>This is the principle that flips a deficit-based system into an architecture-based one.</p>
+      </div>
+      <div class="ls-design">
+        <div class="ls-design-tag">Design Move</div>
+        <div class="ls-design-name">Front-load the most counter-intuitive idea.</div>
+        <p>The 80% rule is the lesson's load-bearing wall. Place it before tier mechanics so every later stage rests on it. <strong>One big idea per chunk.</strong> Bold the threshold so eye-tracking finds it on a re-skim. <strong>"Architecture-based"</strong> introduces the controlling metaphor — referenced again at 6:30.</p>
+      </div>
+    </div>
+
+    <!-- 2:30 Input 2 -->
+    <div class="lesson-stage">
+      <div>
+        <div class="ls-time-val">2:30</div>
+        <div class="ls-time-label">Input · The Three Tiers</div>
+      </div>
+      <div class="ls-lesson">
+        <p>When Tier 1 is sound, learners distribute roughly like this:</p>
+        <p><strong>Tier 1 (≈80%)</strong> — universal supports working as designed.<br>
+           <strong>Tier 2 (15–20%)</strong> — strategic small-group reinforcement, time-bound, layered <em>on top of</em> Tier 1.<br>
+           <strong>Tier 3 (≤10%)</strong> — intensive, individualized, evidence-based, with progress monitored frequently.</p>
+        <div class="artifact-img" style="margin-top:14px;"><img src="images/mtss-placemat.png" alt="MTSS placemat showing all three tiers" loading="lazy" /></div>
+        <p style="font-family:'DM Mono', monospace; font-size:10px; color:var(--text-lt); text-align:center; margin-top:6px; font-style:italic;">Reference visual · MTSS Intervention Flowchart, 2026–27</p>
+      </div>
+      <div class="ls-design">
+        <div class="ls-design-tag">Design Move</div>
+        <div class="ls-design-name">Visual anchoring + numeric heuristic.</div>
+        <p>Mayer's <strong>multimedia principle:</strong> pair the abstraction with the visual at the moment of introduction, not later. The <strong>80/15/5 distribution</strong> sticks because it's a mnemonic, not a definition. Reusing the published placemat doubles as portfolio evidence — "this is the artifact we just discussed."</p>
+      </div>
+    </div>
+
+    <!-- 4:00 Input 3 -->
+    <div class="lesson-stage">
+      <div>
+        <div class="ls-time-val">4:00</div>
+        <div class="ls-time-label">Input · The ICEL Diagnostic</div>
+      </div>
+      <div class="ls-lesson">
+        <p>When Tier 1 isn't reaching 80%, MTSS asks <strong>where</strong> the system is failing — before asking <strong>who</strong> needs more support. The diagnostic is <strong>ICEL</strong>:</p>
+        <p>
+          <strong>I — Instruction.</strong> Are the moves that teach the content actually happening?<br>
+          <strong>C — Curriculum.</strong> Is the content itself aligned, paced, and high-quality?<br>
+          <strong>E — Environment.</strong> Are the conditions (time, space, climate) supporting learning?<br>
+          <strong>L — Learner.</strong> Last, not first. Only after the prior three.
+        </p>
+      </div>
+      <div class="ls-design">
+        <div class="ls-design-tag">Design Move</div>
+        <div class="ls-design-name">Sequence is the lesson.</div>
+        <p>The order I → C → E → L <strong>is</strong> the instructional point. Without ICEL, the 80% rule is just a number; with ICEL, it becomes a non-blaming root-cause framework. The lesson teaches the order by structuring the visual list in that order — <strong>structural pedagogy.</strong> Bold lead-letters double as a recall scaffold.</p>
+      </div>
+    </div>
+
+    <!-- 5:30 Practice -->
+    <div class="lesson-stage">
+      <div>
+        <div class="ls-time-val">5:30</div>
+        <div class="ls-time-label">Practice · Formative Check</div>
+      </div>
+      <div class="ls-lesson">
+        <p>Back to your 100 employees. Eighty-five pass; fifteen don't.</p>
+        <div class="ls-quiz">
+          <div class="ls-quiz-q">Where does ICEL tell you to look first?</div>
+          <ul class="ls-quiz-opts">
+            <li><span class="opt-letter">A.</span><span>The 15 employees who failed. Investigate their prior training history.</span></li>
+            <li><span class="opt-letter">B.</span><span>The training module itself — clarity, sequencing, length.</span></li>
+            <li><span class="opt-letter">C.</span><span>Both — but ICEL says start with Instruction and Curriculum.</span></li>
+          </ul>
+          <div class="ls-quiz-correct">Correct: C. The 80% rule says only 85/100 succeeded. Look at the system before the learner.</div>
+        </div>
+      </div>
+      <div class="ls-design">
+        <div class="ls-design-tag">Design Move</div>
+        <div class="ls-design-name">Near-transfer scenario with intentional distractors.</div>
+        <p>The check tests <strong>structural reasoning</strong>, not surface recall. Option A is the default lazy answer. Option C requires the learner to integrate <strong>both</strong> Inputs 1 and 3. Distractors are credible, not absurd — that's what separates a formative check from a vibe quiz. The reveal restates the principle in the learner's own scenario, sealing it.</p>
+      </div>
+    </div>
+
+    <!-- 6:30 Translation -->
+    <div class="lesson-stage">
+      <div>
+        <div class="ls-time-val">6:30</div>
+        <div class="ls-time-label">Translation to L&amp;D</div>
+      </div>
+      <div class="ls-lesson">
+        <p>This is exactly how to design tiered employee enablement:</p>
+        <p>
+          <strong>Tier 1</strong> — your universal onboarding and job-aid library. Should reach ~80% well.<br>
+          <strong>Tier 2</strong> — targeted cohorts, manager-led practice, peer coaching. Time-bound.<br>
+          <strong>Tier 3</strong> — 1:1 performance coaching with explicit goals and progress monitoring.
+        </p>
+        <p>And before you build any Tier 2, ask ICEL: is your <strong>Instruction</strong> (the training itself) actually delivered? Is the <strong>Curriculum</strong> (content) sound? Is the <strong>Environment</strong> (manager support, time-on-task) protected? Then — and only then — talk about the <strong>Learner</strong>.</p>
+      </div>
+      <div class="ls-design">
+        <div class="ls-design-tag">Design Move</div>
+        <div class="ls-design-name">Make the transfer explicit.</div>
+        <p>Learning transfer rarely happens by hope. The lesson maps each MTSS structure to a corporate analogue <strong>by name</strong> — Tier 2 = manager-led practice — so the learner walks out with a usable mental model, not just an admiring one. <strong>"And only then"</strong> repeats the I→C→E→L sequence in active voice, reinforcing the order without reteaching it.</p>
+      </div>
+    </div>
+
+    <!-- 7:30 Close -->
+    <div class="lesson-stage">
+      <div>
+        <div class="ls-time-val">7:30</div>
+        <div class="ls-time-label">Close · Spaced Retrieval</div>
+      </div>
+      <div class="ls-lesson">
+        <p><strong>Three takeaways. Three sentences.</strong></p>
+        <p>
+          1. Tier 1 must serve 80%. If it doesn't, fix the system before referring the learner.<br>
+          2. ICEL is the order: Instruction, Curriculum, Environment, Learner.<br>
+          3. The same architecture runs your L&amp;D org as runs a school's intervention system.
+        </p>
+        <p style="font-style:italic; color:var(--text-mid);">Now write each takeaway in your own words before closing this page. You'll remember it tomorrow.</p>
+      </div>
+      <div class="ls-design">
+        <div class="ls-design-tag">Design Move</div>
+        <div class="ls-design-name">Spaced-retrieval close — not a recap.</div>
+        <p>The temptation at the end of any lesson is to summarize <strong>for</strong> the learner. The strongest closes ask the learner to <strong>generate</strong> the summary themselves. The "in your own words" prompt activates retrieval practice (Roediger &amp; Karpicke); the numbered three-sentence frame keeps cognitive load low. <strong>What the learner produces is what they retain.</strong></p>
+      </div>
+    </div>
+
+    <div class="lesson-footer">
+      <strong>What this sample shows.</strong>
+      Learning experience design is two skills running in parallel: the lesson the learner sees, and the architecture under it. Strong learning designers can do both — and explain the second to engineers, PMs, and executives who need to ship the first. This walkthrough is one of many.
+    </div>
   </div>
 </section>
 
 <!-- TRACK RECORD -->
 <section class="built-section" id="track-record" style="background: var(--white);">
   <div class="section-inner">
-    <div class="section-label">Section 02 · Track Record · K–12 Outcomes</div>
-    <h2 class="section-title">Fifteen-plus years. Title I and private. Classroom, coaching, curriculum, founding-team admin.</h2>
+    <div class="section-label">Section 03 · Track Record · K–12 Outcomes</div>
+    <h2 class="section-title">Title I and private. Classroom, coaching, curriculum, founding-team admin.</h2>
     <p class="section-lead">The work below is what produced the structural conviction behind the Independent Portfolio — and demonstrates the ability to deliver measurable outcomes inside complex systems.</p>
 
     <!-- Case 1 -->
@@ -647,72 +1820,161 @@
       <div class="work-tag">Case Study 01 · Performance Turnaround</div>
       <h3 class="work-title">Schoolwide Performance Turnaround</h3>
       <p class="work-subtitle">Inaugural Assistant Principal · Title I Middle School (~1,000 students)</p>
-      <div class="case-block"><div class="case-label">Challenge</div><p class="case-text">A newly opened middle school faced inconsistent instructional practices, no aligned operating systems, and low baseline performance. Teams were working hard — but not in coordinated directions — and student outcomes reflected that.</p></div>
-      <div class="case-block"><div class="case-label">Action</div>
-        <ul class="work-list">
-          <li>Built and led a data-driven Professional Learning Community (PLC) operating system with consistent rhythms for planning, review, and adjustment.</li>
-          <li>Implemented Plan-Do-Study-Act (PDSA) cycles across grade-level and content teams to drive continuous improvement.</li>
-          <li>Delivered targeted professional development on MTSS, Universal Design for Learning (UDL), and high-impact instructional clarity.</li>
-          <li>Established schoolwide instructional expectations and the monitoring infrastructure to maintain them.</li>
-        </ul>
+      <div class="card-stats">
+        <div class="card-stat"><div class="card-stat-num">10–15%</div><div class="card-stat-label">Performance gain · 1 year</div></div>
+        <div class="card-stat"><div class="card-stat-num">65%+</div><div class="card-stat-label">Students improved · ELA + Math</div></div>
+        <div class="card-stat"><div class="card-stat-num">+6.6</div><div class="card-stat-label">CAST point gain</div></div>
+        <div class="card-stat"><div class="card-stat-num">CA Distinguished</div><div class="card-stat-label">School recognition</div></div>
       </div>
-      <div class="case-block"><div class="case-label">Results</div>
-        <ul class="work-list">
-          <li><strong>10–15% increase</strong> in overall performance outcomes in a single year.</li>
-          <li><strong>65%+ of students</strong> improved scores in both ELA and Mathematics.</li>
-          <li><strong>+6.6 point gain</strong> on California Science Test (CAST).</li>
-          <li>Contributed directly to <strong>California Distinguished School recognition</strong>.</li>
-        </ul>
+      <div class="case-grid-4">
+        <div class="case-cell challenge">
+          <div class="case-cell-label">Challenge</div>
+          <div class="case-cell-text">A newly opened Title I middle school with inconsistent instruction, no aligned operating systems, and low baseline performance.</div>
+        </div>
+        <div class="case-cell action">
+          <div class="case-cell-label">Action</div>
+          <ul>
+            <li>Built a data-driven PLC operating system with planning + review cycles.</li>
+            <li>Implemented PDSA cycles across grade-level and content teams.</li>
+            <li>Delivered PD on MTSS, UDL, and instructional clarity.</li>
+            <li>Established schoolwide instructional expectations + monitoring infrastructure.</li>
+          </ul>
+        </div>
+        <div class="case-cell result">
+          <div class="case-cell-label">Result</div>
+          <ul>
+            <li>10–15% gain in performance outcomes in one year.</li>
+            <li>65%+ of students improved ELA and Math.</li>
+            <li>+6.6 point gain on California Science Test (CAST).</li>
+            <li>Direct contribution to CA Distinguished School recognition.</li>
+          </ul>
+        </div>
+        <div class="case-cell translation">
+          <div class="case-cell-label">Corporate Translation</div>
+          <div class="case-cell-text">Enterprise performance turnaround · cross-functional team alignment · KPI-driven execution under measurable goals.</div>
+        </div>
       </div>
-      <div class="case-block translation"><div class="case-label">Corporate Translation</div><p class="case-text">Enterprise-wide performance improvement initiative · cross-functional team alignment · KPI-driven execution under measurable goals.</p></div>
     </div>
 
-    <!-- Case 2 -->
+    <!-- Case 2 · Teacher Clarity Walkthrough -->
     <div class="work-card navy">
-      <div class="work-tag">Case Study 02 · System Architecture</div>
-      <h3 class="work-title">MTSS System Design for Intervention</h3>
-      <p class="work-subtitle">Tiered support architecture and decision framework</p>
-      <div class="case-block"><div class="case-label">Challenge</div><p class="case-text">Existing intervention processes were symptom-focused rather than system-focused, leading to over-referral, inconsistent decisions, and inefficient use of staff time and student time.</p></div>
-      <div class="case-block"><div class="case-label">Action</div>
-        <ul class="work-list">
-          <li>Designed and implemented a tiered support decision framework (MTSS) that routed students by objective criteria, not anecdote.</li>
-          <li>Introduced an "80% rule" trigger model — if Tier 1 wasn't reaching 80% of students, the issue belonged to instruction, not the student.</li>
-          <li>Trained staff in root-cause analysis using the ICEL framework (Instruction, Curriculum, Environment, Learner) to diagnose before prescribing.</li>
-          <li>Built the framework now published as the MTSS Intervention Flowchart, 2026–27 (see Section 01).</li>
-        </ul>
+      <div class="work-tag">Case Study 02 · Quality System &amp; Capability Build</div>
+      <h3 class="work-title">Teacher Clarity Walkthrough Implementation</h3>
+      <p class="work-subtitle">Admin-team monitoring system · Fisher &amp; Frey clarity framework · Hattie ES 0.75</p>
+      <p class="card-summary">An admin-team walkthrough protocol that drove dramatic year-over-year academic growth, increased teacher capacity, and built continuous quality assurance into the system.</p>
+      <div class="case-grid-4">
+        <div class="case-cell challenge">
+          <div class="case-cell-label">Challenge</div>
+          <div class="case-cell-text">Wide variability in teacher clarity drove outcome gaps. Walkthroughs typically read as surveillance — adoption stalled, data never became capability.</div>
+        </div>
+        <div class="case-cell action">
+          <div class="case-cell-label">Action</div>
+          <ul>
+            <li>Operated as an admin team — every classroom got structured observation.</li>
+            <li>Anchored to Fisher &amp; Frey clarity framework (Hattie ES 0.75).</li>
+            <li>Randomized student selection + structured response capture.</li>
+            <li>Weekly feedback loops integrated into PLC + PD rhythms.</li>
+          </ul>
+        </div>
+        <div class="case-cell result">
+          <div class="case-cell-label">Result · Y1 → Y2</div>
+          <ul>
+            <li>ELA +5.2% · Math +11% · Science +15% (schoolwide).</li>
+            <li>Math 8th grade nearly doubled (18% → 36%).</li>
+            <li>Increased teacher capacity through credible peer language.</li>
+            <li>System-level quality assurance, sustained.</li>
+          </ul>
+        </div>
+        <div class="case-cell translation">
+          <div class="case-cell-label">Corporate Translation</div>
+          <div class="case-cell-text">Continuous quality assurance · capability monitoring at the IC level · evidence-based performance improvement · feedback systems that build skill, not enforce compliance.</div>
+        </div>
       </div>
-      <div class="case-block"><div class="case-label">Results</div>
-        <ul class="work-list">
-          <li>Reduced unnecessary intervention referrals.</li>
-          <li>Improved Tier 1 instructional effectiveness across grade levels.</li>
-          <li>Increased staff clarity and consistency in support decisions.</li>
-        </ul>
+
+      <!-- Tool I Built · live -->
+      <div class="tool-callout">
+        <div>
+          <div class="tool-callout-label">Tool I Built · Live</div>
+          <div class="tool-callout-name">Teacher Clarity Walkthrough Tool</div>
+          <div class="tool-callout-desc">After driving these results as an admin, I built the tool itself — a structured walkthrough instrument that operationalizes the same protocol for instructional coaches and administrators. Live on ForwardEd. CC BY-NC 4.0.</div>
+        </div>
+        <a href="https://forwardedclarity.netlify.app" target="_blank" rel="noopener" class="tool-callout-cta">
+          Launch Tool →
+        </a>
       </div>
-      <div class="case-block translation"><div class="case-label">Corporate Translation</div><p class="case-text">Process optimization · decision-making framework design · operational efficiency · root-cause methodology applied at scale.</p></div>
+
+      <!-- Year 1 → Year 2 schoolwide growth chart -->
+      <div class="case-block" style="margin-top: 18px;"><div class="case-label">The Data Behind It</div>
+        <p class="case-text" style="margin-bottom: 8px;">Schoolwide CAASPP &amp; CAST growth across the two-year admin-team window:</p>
+        <div class="results-data">
+          <div class="results-headline">
+            <div class="results-headline-cell">
+              <div class="rh-subject">English Language Arts</div>
+              <div class="rh-delta">+5.2%</div>
+              <div class="rh-detail">44% → 49.2% met / exceeded</div>
+            </div>
+            <div class="results-headline-cell">
+              <div class="rh-subject">Math</div>
+              <div class="rh-delta">+11%</div>
+              <div class="rh-detail">28% → 37% met / exceeded</div>
+            </div>
+            <div class="results-headline-cell">
+              <div class="rh-subject">Science</div>
+              <div class="rh-delta">+15%</div>
+              <div class="rh-detail">27% → 42% met / exceeded</div>
+            </div>
+          </div>
+          <table class="results-table">
+            <thead>
+              <tr><th>Cohort</th><th>Year 1 (23/24)</th><th>Year 2 (24/25)</th><th>Delta</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ELA · 6th grade</td><td>45%</td><td>48%</td><td class="delta-pos">+3%</td></tr>
+              <tr><td>ELA · 7th grade</td><td>45%</td><td>49%</td><td class="delta-pos">+4%</td></tr>
+              <tr><td>ELA · 8th grade</td><td>43%</td><td>50%</td><td class="delta-strong">+7%</td></tr>
+              <tr><td>Math · 6th grade</td><td>36%</td><td>36%</td><td class="delta-zero">+/− 0</td></tr>
+              <tr><td>Math · 7th grade</td><td>28%</td><td>39%</td><td class="delta-strong">+11%</td></tr>
+              <tr><td>Math · 8th grade</td><td>18%</td><td>36%</td><td class="delta-strong">+18%</td></tr>
+              <tr><td>Science (schoolwide)</td><td>27%</td><td>42%</td><td class="delta-strong">+15%</td></tr>
+            </tbody>
+          </table>
+          <div class="results-source">Source · KNMS CAASPP &amp; CAST results · 2023/2024 → 2024/2025 · ★ = standout single-cohort gain</div>
+        </div>
+      </div>
     </div>
 
     <!-- Case 3 -->
     <div class="work-card olive">
       <div class="work-tag">Case Study 03 · Capability Building</div>
       <h3 class="work-title">Instructional Coaching &amp; Workforce Development</h3>
-      <p class="work-subtitle">1:1 coaching, group training, and data-cycle iteration</p>
-      <div class="case-block"><div class="case-label">Challenge</div><p class="case-text">Variability in instructional effectiveness across teams limited consistency in student outcomes and made performance gains hard to sustain.</p></div>
-      <div class="case-block"><div class="case-label">Action</div>
-        <ul class="work-list">
-          <li>Delivered 1:1 performance coaching paired with whole-team training cycles to build skill across the entire team, not just individuals.</li>
-          <li>Modeled and implemented high-impact instructional strategies; coached staff through application.</li>
-          <li>Used iterative data cycles to focus coaching on the practices most likely to move outcomes.</li>
-          <li>Designed and delivered original professional learning sessions (samples below).</li>
-        </ul>
+      <p class="work-subtitle">1:1 coaching · group training · Walkthrough-driven data cycles</p>
+      <div class="case-grid-4">
+        <div class="case-cell challenge">
+          <div class="case-cell-label">Challenge</div>
+          <div class="case-cell-text">Variability in instructional effectiveness limited consistency. Coaching needed to be data-driven and continuous — not episodic.</div>
+        </div>
+        <div class="case-cell action">
+          <div class="case-cell-label">Action</div>
+          <ul>
+            <li>1:1 performance coaching + whole-team training cycles.</li>
+            <li>Coaching anchored to Walkthrough data (see Case 02) — observed practice, not impression.</li>
+            <li>Modeled high-impact strategies; coached staff through application.</li>
+            <li>Iterative data cycles focused on highest-leverage practices.</li>
+          </ul>
+        </div>
+        <div class="case-cell result">
+          <div class="case-cell-label">Result</div>
+          <ul>
+            <li>Improved instructional consistency across teams.</li>
+            <li>Strengthened internal capability; reduced external support reliance.</li>
+            <li>Direct contribution to gains in Cases 01 and 02.</li>
+          </ul>
+        </div>
+        <div class="case-cell translation">
+          <div class="case-cell-label">Corporate Translation</div>
+          <div class="case-cell-text">Workforce development · performance coaching grounded in observation data · upskilling &amp; enablement · build internal capability over buying it.</div>
+        </div>
       </div>
-      <div class="case-block"><div class="case-label">Results</div>
-        <ul class="work-list">
-          <li>Improved instructional consistency across teams.</li>
-          <li>Strengthened internal capability and reduced reliance on external support.</li>
-          <li>Direct contribution to measurable student performance gains.</li>
-        </ul>
-      </div>
-      <div class="case-block translation"><div class="case-label">Corporate Translation</div><p class="case-text">Workforce development · performance coaching · upskilling and enablement · building internal capability rather than buying it.</p></div>
       <div class="artifact-grid">
         <div>
           <div class="artifact-img"><img src="images/pd-data.png" alt="PD slide showing comparative CAASPP performance data analysis" loading="lazy" /></div>
@@ -728,33 +1990,97 @@
     <!-- Case 4 -->
     <div class="work-card teal">
       <div class="work-tag">Case Study 04 · Program Development</div>
-      <h3 class="work-title">Curriculum Design &amp; STEM Program Launch</h3>
-      <p class="work-subtitle">MS Science Curriculum Design Team · DISCOVER STEM Academy</p>
-      <div class="case-block"><div class="case-label">Challenge</div><p class="case-text">Students lacked engaging, future-focused learning pathways connecting academic work to real-world skills. Existing curriculum decisions were ad hoc and not coherently aligned across grade levels.</p></div>
-      <div class="case-block"><div class="case-label">Action</div>
-        <ul class="work-list">
-          <li>Led MS Science Curriculum Design Team through structured curriculum review and adoption process (NGSS toolkit rubrics, side-by-side publisher comparison, parent and educator input).</li>
-          <li>Designed and launched the DISCOVER STEM Academy program — curriculum, structure, and operating model — from the ground up.</li>
-          <li>Built stakeholder alignment across teachers, administrators, families, and community partners.</li>
-          <li>Established a sustainable model designed to be maintained and expanded beyond initial launch.</li>
-        </ul>
-      </div>
-      <div class="case-block"><div class="case-label">Results</div>
-        <ul class="work-list">
-          <li>Increased student engagement in STEM pathways.</li>
-          <li>Reached cross-stakeholder consensus on curriculum direction.</li>
-          <li>Established a sustainable, repeatable program model.</li>
-        </ul>
-      </div>
-      <div class="case-block translation"><div class="case-label">Corporate Translation</div><p class="case-text">Product/program development · go-to-market planning · stakeholder alignment · launch and implementation · design for sustainability, not just launch.</p></div>
-      <div class="artifact-grid">
-        <div>
-          <div class="artifact-img"><img src="images/stem-cover.png" alt="MS Science Curriculum Design Team launch deck cover, April 2022" loading="lazy" /></div>
-          <p class="artifact-caption">MS Science Curriculum Design Team · launch deck (April 2022)</p>
+      <h3 class="work-title">DISCOVER Academy Launch &amp; STEM Curriculum Design</h3>
+      <p class="work-subtitle">Inaugural staff · Newbury Park, CA · CSUCI partnership · MS Science Design Team</p>
+      <div class="case-grid-4">
+        <div class="case-cell challenge">
+          <div class="case-cell-label">Challenge</div>
+          <div class="case-cell-text">Founding a brand-new middle school program from zero — curriculum, structure, operating model — with no real bridge between K–12 and post-secondary STEM.</div>
         </div>
-        <div>
-          <div class="artifact-img"><img src="images/stem-process.png" alt="Decision Day documentation: curriculum review and adoption process" loading="lazy" /></div>
-          <p class="artifact-caption">Curriculum review process · NGSS-aligned adoption decision documentation</p>
+        <div class="case-cell action">
+          <div class="case-cell-label">Action</div>
+          <ul>
+            <li>Inaugural staff at DISCOVER Academy, Newbury Park, CA.</li>
+            <li>Partnered with CSU Channel Islands on cross-curricular content development.</li>
+            <li>Led MS Science Curriculum Design Team through NGSS-aligned adoption.</li>
+            <li>Designed DISCOVER STEM Academy program end-to-end.</li>
+          </ul>
+        </div>
+        <div class="case-cell result">
+          <div class="case-cell-label">Result</div>
+          <ul>
+            <li>Successful inaugural launch with cross-stakeholder consensus.</li>
+            <li>Operational CSUCI partnership producing authentic learning.</li>
+            <li>Sustainable, scalable program model.</li>
+          </ul>
+        </div>
+        <div class="case-cell translation">
+          <div class="case-cell-label">Corporate Translation</div>
+          <div class="case-cell-text">Founding-team product launch · external partnerships · curriculum/content architecture · go-to-market alignment · designed for sustainability past launch.</div>
+        </div>
+      </div>
+      <div class="stem-grid">
+        <!-- Newspaper photo: ribbon-cutting -->
+        <div class="stem-card">
+          <div class="stem-card-header">
+            <div class="stem-card-eyebrow">Press Coverage · January 2011</div>
+            <div class="stem-card-title">Ribbon-cutting · Discover Academy of Engineering &amp; Applied Sciences</div>
+          </div>
+          <div class="artifact-img" style="margin: 0; border: none; border-radius: 0; overflow: hidden;">
+            <img src="https://www.toacorn.com/wp-content/uploads/images/2011-01-27/49p1-1024x893.jpg" alt="Ribbon-cutting at Sequoia Middle School's Discover Academy of Engineering and Applied Sciences, January 2011 — Superintendent Jeff Baarstad, trustee Tim Stephens, and teachers Randy Smith, Amy Hamaker, Lisa Gleason, and Nicole Simmons (Calvert)" loading="lazy" style="width: 100%; height: auto; display: block;" />
+          </div>
+          <div class="stem-card-footer">
+            <strong>"OPEN TO DISCOVERY"</strong> — School district members celebrate the opening of Sequoia Middle School's Discover Academy at the ribbon-cutting in Newbury Park, CA. <em>Pictured (from left): Superintendent Jeff Baarstad, trustee Tim Stephens, teachers Randy Smith, Amy Hamaker, Lisa Gleason, and Nicole Simmons (then Calvert).</em>
+            <br><br>
+            <span style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-lt); letter-spacing: 0.04em;">Source · <a href="https://www.toacorn.com/articles/discover-academy-opens-at-sequoia-middle-school/" target="_blank" rel="noopener">Thousand Oaks Acorn · Jan 27, 2011</a></span>
+          </div>
+        </div>
+
+        <!-- NGSS Three Dimensions -->
+        <div class="stem-card olive">
+          <div class="stem-card-header">
+            <div class="stem-card-eyebrow">Curriculum Framework</div>
+            <div class="stem-card-title">Three-Dimensional NGSS Architecture</div>
+          </div>
+          <div class="stem-icon-row">
+            <div class="stem-icon-cell">
+              <svg class="stem-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3h6"/>
+                <path d="M10 3v6.5L4 21h16l-6-11.5V3"/>
+                <path d="M7.5 15h9"/>
+                <circle cx="8.5" cy="18" r="0.6" fill="currentColor"/>
+                <circle cx="12" cy="17" r="0.6" fill="currentColor"/>
+                <circle cx="15" cy="19" r="0.6" fill="currentColor"/>
+              </svg>
+              <div class="stem-icon-name">Science &amp; Engineering Practices</div>
+              <div class="stem-icon-desc">How scientists work</div>
+            </div>
+            <div class="stem-icon-cell">
+              <svg class="stem-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="2.5"/>
+                <circle cx="18" cy="6" r="2.5"/>
+                <circle cx="12" cy="18" r="2.5"/>
+                <line x1="7.8" y1="7.8" x2="10.5" y2="15.8"/>
+                <line x1="16.2" y1="7.8" x2="13.5" y2="15.8"/>
+                <line x1="8.5" y1="6" x2="15.5" y2="6"/>
+              </svg>
+              <div class="stem-icon-name">Crosscutting Concepts</div>
+              <div class="stem-icon-desc">Patterns across domains</div>
+            </div>
+            <div class="stem-icon-cell">
+              <svg class="stem-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="12" rx="10" ry="4"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-60 12 12)"/>
+                <circle cx="12" cy="12" r="1.4" fill="currentColor"/>
+              </svg>
+              <div class="stem-icon-name">Disciplinary Core Ideas</div>
+              <div class="stem-icon-desc">What scientists know</div>
+            </div>
+          </div>
+          <div class="stem-card-footer">
+            The curriculum I co-designed wove the <strong>three NGSS dimensions</strong> together — practices, concepts, and content in concert — anchored to the academy's hands-on, inquiry-based instructional model and CSUCI cross-curricular partnership.
+          </div>
         </div>
       </div>
     </div>
@@ -764,59 +2090,179 @@
       <div class="work-tag">Case Study 05 · Executive Communication</div>
       <h3 class="work-title">Data &amp; Systems Leadership</h3>
       <p class="work-subtitle">Site-wide performance analysis · Board-level communication</p>
-      <div class="case-block"><div class="case-label">Challenge</div><p class="case-text">Site-wide performance data existed in volume, but leadership and board-level stakeholders needed it translated into clear narratives that drove decisions — not just reports.</p></div>
-      <div class="case-block"><div class="case-label">Action</div>
-        <ul class="work-list">
-          <li>Analyzed and synthesized site-wide performance data into executive-level summaries.</li>
-          <li>Communicated insights and trends directly to leadership and board-level stakeholders.</li>
-          <li>Drove decision-making by connecting data trends to strategic priorities and resource allocation.</li>
-        </ul>
-      </div>
-      <div class="case-block"><div class="case-label">Results</div>
-        <ul class="work-list">
-          <li>Improved strategic alignment between operational work and stated goals.</li>
-          <li>Increased clarity in leadership decision-making.</li>
-          <li>Supported measurable site-wide growth initiatives.</li>
-        </ul>
-      </div>
-      <div class="case-block translation"><div class="case-label">Corporate Translation</div><p class="case-text">Executive communication · data storytelling · strategic advising · turning data into decisions for non-technical stakeholders.</p></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section class="philosophy-section" id="philosophy">
-  <div class="section-inner">
-    <div class="section-label">Section 03 · How I Work</div>
-    <h2 class="section-title">The operating commitments behind every framework, project, and team I've led.</h2>
-    <div class="philosophy-grid">
-      <div class="philosophy-card teal">
-        <h3>Systems for Students First</h3>
-        <p>When outcomes fall short, the instinct is to look at students first. I start somewhere different. I examine the structures and systems surrounding students, because that is where the answers most often live. Every decision begins and ends with one question: what does this do for student learning and wellbeing?</p>
-      </div>
-      <div class="philosophy-card crimson">
-        <h3>Design for All</h3>
-        <p>Every educator enters this profession believing every child can learn. The challenge is building systems that make that belief a daily reality, not an aspiration. I help organizations design pathways where every learner has genuine access to the standards every facilitator commits to teaching — with the supports that make access real, not theoretical. Not about doing more. About designing better.</p>
-      </div>
-      <div class="philosophy-card navy">
-        <h3>Burden Resolution</h3>
-        <p>People are not burned out because they stopped caring. They are burned out because the systems around them were not designed to work coherently. I work to close that gap. When curriculum, instruction, and support are aligned around a shared purpose, the system begins doing the work it was supposed to do — and the burden begins to resolve. Not because the work gets easier, but because it finally makes sense.</p>
-      </div>
-      <div class="philosophy-card olive">
-        <h3>Moral Clarity</h3>
-        <p>Most practitioners already know what their people need. The harder question is what to do when the system, the politics, or the pressure make acting on that knowledge feel impossible. I believe knowing what people need — and having the professional courage to act on it, even when uncomfortable — is the defining responsibility of leadership. Not as a judgment. As a commitment we make together.</p>
+      <div class="case-grid-4">
+        <div class="case-cell challenge">
+          <div class="case-cell-label">Challenge</div>
+          <div class="case-cell-text">Volumes of performance data; leadership and board needed it translated into narratives that drove decisions — not reports.</div>
+        </div>
+        <div class="case-cell action">
+          <div class="case-cell-label">Action</div>
+          <ul>
+            <li>Analyzed + synthesized site-wide data into executive summaries.</li>
+            <li>Communicated insights directly to leadership and board.</li>
+            <li>Connected data trends to strategy and resource allocation.</li>
+          </ul>
+        </div>
+        <div class="case-cell result">
+          <div class="case-cell-label">Result</div>
+          <ul>
+            <li>Improved alignment between operations and stated goals.</li>
+            <li>Increased clarity in leadership decision-making.</li>
+            <li>Supported measurable site-wide growth initiatives.</li>
+          </ul>
+        </div>
+        <div class="case-cell translation">
+          <div class="case-cell-label">Corporate Translation</div>
+          <div class="case-cell-text">Executive communication · data storytelling · strategic advising · turning data into decisions for non-technical stakeholders.</div>
+        </div>
       </div>
     </div>
+
+    <!-- Case 6 · Tech Trek directorship -->
+    <div class="work-card teal">
+      <div class="work-tag">Case Study 06 · Program Leadership</div>
+      <h3 class="work-title">Tech Trek STEM Camp · Director</h3>
+      <p class="work-subtitle">AAUW-sponsored residential Math + Science camp · Whittier College · 3 years</p>
+      <p class="card-summary">Took over an established AAUW Tech Trek camp and <strong>redesigned the curriculum, schedule, and program arc end-to-end</strong> — adding a culminating research-and-presentation arc, college-level lab experiences, and structured daily themes. Doubled enrollment over the directorship tenure.</p>
+      <div class="card-stats">
+        <div class="card-stat"><div class="card-stat-num">3 years</div><div class="card-stat-label">Directorship tenure</div></div>
+        <div class="card-stat"><div class="card-stat-num">90 girls</div><div class="card-stat-label">Per cohort · grades 7–8</div></div>
+        <div class="card-stat"><div class="card-stat-num">20 staff</div><div class="card-stat-label">Counselors + instructors</div></div>
+        <div class="card-stat"><div class="card-stat-num">2×</div><div class="card-stat-label">Enrollment growth</div></div>
+      </div>
+      <div class="case-grid-4">
+        <div class="case-cell challenge">
+          <div class="case-cell-label">Challenge</div>
+          <div class="case-cell-text">An established AAUW Tech Trek camp at Whittier College needed program-arc, curriculum, and operations updates to grow engagement and reach more girls in STEM.</div>
+        </div>
+        <div class="case-cell action">
+          <div class="case-cell-label">Action</div>
+          <ul>
+            <li>Directed the program 3 consecutive years.</li>
+            <li>Redesigned schedule, curriculum, and culminating arc (see comparison below).</li>
+            <li>Led a staff of 20 across 1 week residential at Whittier dorms.</li>
+            <li>Stakeholder management: AAUW, university, families, staff.</li>
+          </ul>
+        </div>
+        <div class="case-cell result">
+          <div class="case-cell-label">Result</div>
+          <ul>
+            <li><strong>Doubled enrollment</strong> across the directorship.</li>
+            <li>Higher camper engagement; sustained 3-year tenure.</li>
+            <li>Operational integration with Whittier campus partners.</li>
+            <li>Advanced AAUW's national STEM-for-girls mission at scale.</li>
+          </ul>
+        </div>
+        <div class="case-cell translation">
+          <div class="case-cell-label">Corporate Translation</div>
+          <div class="case-cell-text">Program management · stakeholder &amp; brand-partner alignment · curriculum architecture · operational leadership for a residential program · measurable program growth.</div>
+        </div>
+      </div>
+
+      <!-- Before / After redesign comparison -->
+      <div class="redesign-block">
+        <div class="redesign-header">
+          <div class="redesign-tab before">Before · 2015 schedule <span class="redesign-tab-meta">(inherited)</span></div>
+          <div class="redesign-tab after">After · 2016 redesign <span class="redesign-tab-meta">(my version)</span></div>
+        </div>
+        <div class="redesign-grid">
+          <div class="redesign-col before">
+            <ul>
+              <li>7-day program with abrupt Sunday registration</li>
+              <li>One 4-hour core class block (8am–12pm)</li>
+              <li>Generic evening "dorm meeting + thank-you letters"</li>
+              <li>No culminating camper presentation</li>
+              <li>Single field trip; limited campus building use</li>
+              <li>Workshops: Optics, Math Games, Reader's Theatre</li>
+              <li>No pre-program measurement instrument</li>
+            </ul>
+          </div>
+          <div class="redesign-col after">
+            <ul>
+              <li><strong>8-day program</strong> with dedicated orientation day</li>
+              <li><strong>Modular core class</strong> with structured breaks for Dorm Moms</li>
+              <li><strong>Themed daily curriculum</strong>: 21st-Century Women in STEM research arc</li>
+              <li><strong>Culminating Final Presentation</strong> — campers research + present</li>
+              <li><strong>Bolsa Chica Wetlands</strong> + CA Science Center field trips</li>
+              <li><strong>College-level workshops</strong>: Cadaver Lab, Chemistry of Makeup, Roller Coasters, multi-day Rube Goldberg build</li>
+              <li><strong>Pre-survey instrument</strong> for impact measurement</li>
+              <li><strong>Multi-building campus use</strong> (Villalobos · Hoover · Stauffer)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="redesign-caption">Curriculum &amp; schedule redesign · Tech Trek Whittier · 2015 → 2016 · sourced from inherited and implemented camp schedules</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- TRANSLATION -->
-<section class="translation-section">
+<section class="translation-section" id="translation">
   <div class="section-inner">
-    <div class="section-label">Section 04 · Translation</div>
-    <h2 class="section-title">K–12 to Corporate</h2>
-    <p class="section-lead">How K–12 experience maps to roles in EdTech, L&amp;D, consulting, and operations — because most candidates fail in the translation, not the substance.</p>
+    <div class="section-label">Section 04 · What I Bring</div>
+    <h2 class="section-title">An unusually rare profile for L&amp;D, EdTech, and consulting teams.</h2>
+    <p class="section-lead">Most candidates with K–12 backgrounds get filtered out of corporate L&amp;D and EdTech roles because the work history is read in isolation. Read in context — alongside the personality data, the shipped tools, and the measurable outcomes — the work itself is exactly what these teams are usually trying to hire for and rarely find.</p>
+
+    <div class="vprop-stat-row">
+      <div class="vprop-stat">
+        <div class="vprop-stat-label">Investigative</div>
+        <div class="vprop-stat-num">100<em>/100</em></div>
+        <div class="vprop-stat-desc">Top of Holland Code · Researcher and problem-solver wired for "why."</div>
+      </div>
+      <div class="vprop-stat">
+        <div class="vprop-stat-label">Conscientiousness</div>
+        <div class="vprop-stat-num">92<em>/100</em></div>
+        <div class="vprop-stat-desc">DiSC peak · attention to detail with high-quality execution.</div>
+      </div>
+      <div class="vprop-stat">
+        <div class="vprop-stat-label">Extraversion</div>
+        <div class="vprop-stat-num">92<em>/100</em></div>
+        <div class="vprop-stat-desc">Big Five peak · energy to lead, communicate, and persuade.</div>
+      </div>
+      <div class="vprop-stat">
+        <div class="vprop-stat-label">Population Estimate</div>
+        <div class="vprop-stat-num">&lt;3<em>%</em></div>
+        <div class="vprop-stat-desc">ENTJ commander + 100 Investigative is a rare profile, per Apt. AI assessment.</div>
+      </div>
+    </div>
+
+    <div class="vprop-grid">
+      <div class="vprop-card">
+        <div class="vprop-eyebrow">What's rare about this profile</div>
+        <h3>An administrator who understands the data and a data analyst who understands the human stakes.</h3>
+        <ul>
+          <li><span><strong>ENTJ "Commander"</strong> with a 100/100 Investigative score — most Commanders manage people; this profile leads <em>and</em> wants to get under the hood.</span></li>
+          <li><span><strong>92 Conscientiousness paired with 92 Extraversion</strong> — drive and execution, both at peak. Rare to find together.</span></li>
+          <li><span><strong>83 Realistic + Investigative combo</strong> — designs the system <em>and</em> ships the artifact. Not a theorist, not a tactician — both.</span></li>
+          <li><span><strong>Steadiness 75</strong> — unusual stability beneath the high D/I; the kind of leader people trust to deliver in a crisis.</span></li>
+        </ul>
+      </div>
+      <div class="vprop-card navy">
+        <div class="vprop-eyebrow">What that produces in the work</div>
+        <h3>Diagnostic rigor with adoption-focused build.</h3>
+        <ul>
+          <li><span><strong>Performance turnarounds tied to measurable outcomes</strong> — not framework presentations. 10–15% schoolwide gain in a single year; California Distinguished School recognition.</span></li>
+          <li><span><strong>Tools that survive contact with practitioners</strong> — not demos. Walkthrough instruments, MTSS placemats, AI-enabled diagnostics already in use.</span></li>
+          <li><span><strong>Quality monitoring built into the system architecture</strong> — not bolted on after rollout. Continuous data, immediate feedback, capability built over time.</span></li>
+          <li><span><strong>Direct truth-telling with zero ego</strong> — decisions driven by evidence, hard conversations addressed at the root, professional courage as a default.</span></li>
+        </ul>
+      </div>
+      <div class="vprop-card olive">
+        <div class="vprop-eyebrow">Where it fits on your team</div>
+        <h3>Roles where outcomes, structural thinking, and AI fluency all matter.</h3>
+        <ul>
+          <li><span><strong>Senior Learning Experience Designer</strong> — design with research depth and shipping discipline in equal measure.</span></li>
+          <li><span><strong>L&amp;D / Enablement Lead</strong> — turn variability across a workforce into measurable, sustained capability.</span></li>
+          <li><span><strong>Curriculum / Content Strategist</strong> — architect content systems, not just author courses.</span></li>
+          <li><span><strong>Program Manager / Director of Operations</strong> — own complex implementations end-to-end with rigorous follow-through.</span></li>
+          <li><span><strong>EdTech consulting &amp; workflow optimization</strong> — the niche where K–12 expertise plus AI fluency commands premium value.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="section-title" style="font-size: 28px; margin-top: 16px; margin-bottom: 8px;">Where my K–12 roles fit in your org chart.</h3>
+    <p class="section-lead" style="margin-bottom: 32px;">Direct, defensible role mapping — these aren't aspirational equivalences, they describe the actual work.</p>
     <table class="translation-table">
       <thead>
         <tr>
@@ -833,23 +2279,85 @@
       </tbody>
     </table>
 
-    <h3 class="section-title" style="font-size: 28px; margin-top: 64px; margin-bottom: 12px;">Core Competencies</h3>
-    <div class="competency-grid">
-      <div class="competency-tile">Performance Improvement</div>
-      <div class="competency-tile">Change Management</div>
-      <div class="competency-tile">AI-Enabled Diagnostic Design</div>
-      <div class="competency-tile">Program &amp; Project Management</div>
-      <div class="competency-tile">Process Optimization</div>
-      <div class="competency-tile">Learning Design &amp; Curriculum</div>
-      <div class="competency-tile">Data Analysis &amp; Insight Translation</div>
-      <div class="competency-tile">Cross-Functional Leadership</div>
-      <div class="competency-tile">Coaching &amp; Capability Building</div>
-      <div class="competency-tile">Stakeholder &amp; Executive Communication</div>
-      <div class="competency-tile">Strategic Planning</div>
-      <div class="competency-tile">Systems Design &amp; Implementation</div>
-      <div class="competency-tile">Training &amp; Professional Learning</div>
-      <div class="competency-tile">Research Synthesis &amp; Writing</div>
-      <div class="competency-tile">Product Build &amp; Launch</div>
+    <h3 class="section-title" style="font-size: 28px; margin-top: 64px; margin-bottom: 8px;">Core Competencies</h3>
+    <p class="section-lead" style="margin-bottom: 24px;">Grouped by where they live in a corporate function — so it's clear at a glance which seat I'm sitting in.</p>
+    <div class="competency-clusters">
+      <div class="cluster-card crimson">
+        <div class="cluster-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="16 8 12 12 8 16 12 12 16 16"/>
+          </svg>
+        </div>
+        <div>
+          <div class="cluster-eyebrow">Strategy &amp; Systems</div>
+          <div class="cluster-name">Architecting how the work gets done.</div>
+          <ul class="cluster-list">
+            <li>Systems Design &amp; Implementation</li>
+            <li>Strategic Planning</li>
+            <li>Process Optimization</li>
+            <li>Performance Improvement</li>
+            <li>Change Management</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cluster-card navy">
+        <div class="cluster-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="cluster-eyebrow">Learning &amp; Enablement</div>
+          <div class="cluster-name">Building capability that lasts past launch.</div>
+          <ul class="cluster-list">
+            <li>Learning Design &amp; Curriculum</li>
+            <li>Training &amp; Professional Learning</li>
+            <li>Coaching &amp; Capability Building</li>
+            <li>Workforce Development</li>
+            <li>Onboarding Architecture</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cluster-card olive">
+        <div class="cluster-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="20" x2="12" y2="10"/>
+            <line x1="18" y1="20" x2="18" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="16"/>
+          </svg>
+        </div>
+        <div>
+          <div class="cluster-eyebrow">Data &amp; Insight</div>
+          <div class="cluster-name">Turning evidence into decisions teams can act on.</div>
+          <ul class="cluster-list">
+            <li>Data Analysis &amp; Insight Translation</li>
+            <li>AI-Enabled Diagnostic Design</li>
+            <li>Research Synthesis &amp; Writing</li>
+            <li>Evidence-Based Decision Making</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cluster-card teal">
+        <div class="cluster-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 11 12 14 22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div>
+          <div class="cluster-eyebrow">Execution &amp; Delivery</div>
+          <div class="cluster-name">Getting things shipped, not just scoped.</div>
+          <ul class="cluster-list">
+            <li>Program &amp; Project Management</li>
+            <li>Cross-Functional Leadership</li>
+            <li>Stakeholder &amp; Executive Communication</li>
+            <li>Product Build &amp; Launch</li>
+            <li>Implementation Specialist</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -859,7 +2367,7 @@
   <div class="section-inner">
     <div class="contact-eyebrow">Let's Talk</div>
     <h2>Ready for the next chapter.</h2>
-    <p class="contact-lead">I'm looking for full-time roles in L&amp;D, EdTech, learning design, and program management — where measurable outcomes, structural thinking, and AI fluency matter, and where I can put 15+ years of work to use inside one organization.</p>
+    <p class="contact-lead">I'm looking for full-time roles in L&amp;D, EdTech, learning design, and program management — where measurable outcomes, structural thinking, and AI fluency matter, and where I can put this work to use inside one organization.</p>
     <div class="contact-grid">
       <div class="contact-item">
         <div class="contact-label">Email</div>
