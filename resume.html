@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Nicole Simmons, M.Ed. — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  @page { size: letter; margin: 0; }
+  :root {
+    --cream:        #f4ecd8;
+    --bg:           #f7f1e3;
+    --ink:          #2a2620;
+    --ink-soft:     #4a4438;
+    --muted:        #6e6658;
+    --line:         #d8d0bd;
+    --slate:        #5a7689;
+    --slate-deep:   #3e5564;
+    --slate-darker: #2c3d49;
+    --warm-gold:    #c9a967;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #999;
+    color: var(--ink);
+    font-size: 10pt;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 8.5in; height: 11in;
+    margin: 0 auto;
+    background: var(--bg);
+    display: grid;
+    grid-template-columns: 2.7in 5.8in;
+    overflow: hidden;
+  }
+  @media print {
+    body { background: var(--bg); }
+    .page { margin: 0; box-shadow: none; }
+  }
+  /* ── SIDEBAR ── */
+  .side {
+    background: var(--slate-darker);
+    color: var(--cream);
+    padding: 0.45in 0.38in;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .side .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26pt; font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    text-transform: lowercase;
+    color: var(--cream);
+  }
+  .side .name em { font-style: italic; color: var(--warm-gold); font-weight: 500; }
+  .side .credential {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 11pt;
+    color: rgba(244, 236, 216, 0.7);
+    margin-top: 4px;
+    letter-spacing: 0.005em;
+  }
+  .side .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12pt; font-style: italic;
+    color: var(--warm-gold);
+    line-height: 1.3;
+    padding-top: 14px;
+    border-top: 0.5pt solid rgba(244, 236, 216, 0.16);
+  }
+  .side-eyebrow {
+    font-size: 7.5pt; font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-gold);
+    margin-bottom: 6px;
+  }
+  .side-block { display: flex; flex-direction: column; gap: 4px; }
+  .side-item {
+    font-size: 9pt; line-height: 1.45;
+    color: rgba(244, 236, 216, 0.85);
+  }
+  .side-item a { color: rgba(244, 236, 216, 0.85); text-decoration: none; }
+  .side-item strong { color: var(--cream); font-weight: 600; }
+  .side-list {
+    list-style: none; display: flex; flex-direction: column; gap: 6px;
+  }
+  .side-list li {
+    font-size: 9pt; line-height: 1.4;
+    color: rgba(244, 236, 216, 0.82);
+    padding-left: 12px; position: relative;
+  }
+  .side-list li::before {
+    content: '·'; position: absolute; left: 0; top: -1px;
+    color: var(--warm-gold); font-weight: 700; font-size: 11pt;
+  }
+  .side-stat-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    padding-top: 14px;
+    border-top: 0.5pt solid rgba(244, 236, 216, 0.16);
+  }
+  .side-stat {
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .side-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16pt; font-weight: 500;
+    color: var(--warm-gold);
+    line-height: 1; letter-spacing: -0.02em;
+  }
+  .side-stat-num em { font-style: italic; }
+  .side-stat-label {
+    font-size: 7.5pt; font-weight: 500;
+    color: rgba(244, 236, 216, 0.55);
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 0.45in 0.5in 0.4in;
+    display: flex; flex-direction: column; gap: 10pt;
+  }
+  .summary {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    color: var(--ink);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+  }
+  .summary strong { color: var(--ink); font-weight: 600; }
+  .summary em { color: var(--slate); font-style: italic; }
+
+  .section { display: flex; flex-direction: column; gap: 7pt; }
+  .section-eyebrow {
+    font-size: 7.5pt; font-weight: 600;
+    color: var(--slate);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-bottom: 3pt;
+    border-bottom: 0.5pt solid var(--line);
+  }
+
+  .role {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 2px 14px; align-items: baseline;
+  }
+  .role-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12pt; font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .role-dates {
+    font-size: 8.5pt; color: var(--muted);
+    letter-spacing: 0.01em;
+  }
+  .role-org {
+    grid-column: 1 / -1;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 9.5pt; color: var(--slate);
+    margin-top: -1px;
+  }
+  .role-bullets {
+    grid-column: 1 / -1;
+    list-style: none;
+    display: flex; flex-direction: column; gap: 2.5pt;
+    margin-top: 3pt;
+  }
+  .role-bullets li {
+    font-size: 9pt; line-height: 1.38;
+    color: var(--ink-soft);
+    padding-left: 11px; position: relative;
+  }
+  .role-bullets li::before {
+    content: '—'; position: absolute; left: 0; top: 0;
+    color: var(--slate); font-weight: 600;
+  }
+  .role-bullets li strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <div>
+      <div class="name">nicole simmons<em>.</em></div>
+      <div class="credential">M.Ed. · Educational Leadership</div>
+    </div>
+
+    <div class="tagline">Designing learning experiences that <em>drive results.</em></div>
+
+    <div class="side-block">
+      <div class="side-eyebrow">Contact</div>
+      <div class="side-item"><a href="mailto:niclsimmons@gmail.com">niclsimmons@gmail.com</a></div>
+      <div class="side-item">linkedin.com/in/NicLSIm</div>
+      <div class="side-item">niclsim.github.io</div>
+      <div class="side-item">Chapin, SC</div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-eyebrow">Credentials</div>
+      <div class="side-item"><strong>M.Ed.</strong> · Educational Leadership</div>
+      <div class="side-item"><strong>California</strong> Multiple Subject + Admin Services</div>
+      <div class="side-item"><strong>South Carolina</strong> K–12 credentialed</div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-eyebrow">Core Capabilities</div>
+      <ul class="side-list">
+        <li>Curriculum &amp; learning experience design</li>
+        <li>Performance improvement at scale</li>
+        <li>AI-enabled diagnostic &amp; tool design</li>
+        <li>Coaching &amp; capability building</li>
+        <li>Stakeholder &amp; executive communication</li>
+        <li>Program management &amp; founding teams</li>
+        <li>Systems thinking · structural coherence</li>
+        <li>Cross-functional leadership</li>
+      </ul>
+    </div>
+
+    <div class="side-stat-row">
+      <div class="side-stat">
+        <div class="side-stat-num">15<em>+</em></div>
+        <div class="side-stat-label">Years K–12 leadership</div>
+      </div>
+      <div class="side-stat">
+        <div class="side-stat-num">2</div>
+        <div class="side-stat-label">Founding-team schools</div>
+      </div>
+      <div class="side-stat">
+        <div class="side-stat-num">3</div>
+        <div class="side-stat-label">Published research papers</div>
+      </div>
+      <div class="side-stat">
+        <div class="side-stat-num">4<em>+</em></div>
+        <div class="side-stat-label">Live AI tools shipped</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="summary">
+      K–12 instructional leader and learning designer with 15+ years of measurable outcomes — Title I and private, classroom and district office. Inaugural Assistant Principal at a <em>California Distinguished School</em>. Founded ForwardEd Consulting (independent K–12 publishing &amp; AI-tool practice). Transitioning into L&amp;D, ed tech, and consulting roles where measurable outcomes, structural thinking, and AI fluency matter.
+    </div>
+
+    <div class="section">
+      <div class="section-eyebrow">Selected Experience</div>
+
+      <div class="role">
+        <div class="role-title">Inaugural Assistant Principal</div>
+        <div class="role-dates">2023 – 2025</div>
+        <div class="role-org">Kathryn Newport Middle School · Title I MS (~1,000 students) · Menifee, CA</div>
+        <ul class="role-bullets">
+          <li>Built data-driven PLC operating system + PDSA cycles across grade-level and content teams. <strong>10–15% gain in single year</strong>; 65%+ improved in ELA and Math; +6.6 on CAST. Direct contribution to <strong>California Distinguished School recognition</strong>.</li>
+          <li>Operated Teacher Clarity Walkthrough protocol as admin team. <strong>Y1→Y2: ELA +5.2% · Math +11% · Science +15%</strong>; 8th Math nearly doubled (18%→36%). Subsequently built the live tool at <em>forwardedclarity.netlify.app</em>.</li>
+          <li>Delivered 1:1 coaching + group PD cycles anchored to walkthrough data; led admin-team PD on NGSS adoption; designed reusable curriculum scaffolds adopted across grade levels.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-title">Founder · Independent Practice</div>
+        <div class="role-dates">2026 – present</div>
+        <div class="role-org">ForwardEd Consulting · K–12 publishing &amp; AI-tool development</div>
+        <ul class="role-bullets">
+          <li>Built and shipped <strong>Cohesion Baseline</strong> — AI-powered district diagnostic on Anthropic API + Netlify edge functions. 7 research-grounded dimensions, 995 CA districts pre-loaded. In pilot with TVUSD.</li>
+          <li>Published <strong>three research-grounded white papers</strong> and a research-cited MTSS Intervention Framework (Field Guide + placemat + companion docs). All CC-licensed.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-title">Director · Tech Trek STEM Camp</div>
+        <div class="role-dates">2014 – 2016</div>
+        <div class="role-org">American Association of University Women · Whittier College · Residential MS program</div>
+        <ul class="role-bullets">
+          <li>Redesigned curriculum, schedule, and program arc end-to-end. <strong>Doubled enrollment</strong> across the directorship; 90 girls per cohort; staff of 20; added a culminating Final Presentation arc and college-level lab experiences.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-title">Inaugural Staff · Curriculum Designer</div>
+        <div class="role-dates">2011 – 2014</div>
+        <div class="role-org">DISCOVER Academy · Sequoia MS, Newbury Park, CA · CSUCI partnership</div>
+        <ul class="role-bullets">
+          <li>Founding-team launch of a "school within a school" Academy of Engineering and Applied Sciences. Collaborated with CSU Channel Islands on theme-based cross-curricular units; led MS Science Curriculum Design Team.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-eyebrow">Earlier Roles</div>
+      <ul class="role-bullets" style="margin-top: 0;">
+        <li><strong>TOSA — Teacher on Special Assignment</strong> · Temecula Valley USD · Instructional support, NGSS-aligned implementation, science focus.</li>
+        <li><strong>Instructional Coach &amp; Classroom Teacher</strong> · Title I and private schools, California · 1:1 and team coaching, curriculum design, data cycles.</li>
+        <li><strong>Selected speaking:</strong> App-Smashing workshop, Google Bootcamp Riverside County · ForwardEd publications.</li>
+      </ul>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

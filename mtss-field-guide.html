@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MTSS Field Guide — ForwardEd · Nicole Simmons, M.Ed.</title>
+<meta name="description" content="A field guide to the ForwardEd MTSS Intervention Framework — three tiers, parallel academic + behavior/SEL lanes, research-cited, designed to survive contact with real classrooms." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream:        #f4ecd8;
+    --cream-soft:   #faf5e8;
+    --bg:           #f7f1e3;
+    --surface:      #ffffff;
+    --ink:          #2a2620;
+    --ink-soft:     #4a4438;
+    --muted:        #6e6658;
+    --line:         #e6dfce;
+    --slate:        #5a7689;
+    --slate-deep:   #3e5564;
+    --slate-darker: #2c3d49;
+    --sage:         #8a9a82;
+    --terracotta:   #b56e54;
+    --warm-gold:    #c9a967;
+    --tier1:        #5a7689;
+    --tier2:        #c9a967;
+    --tier3:        #b56e54;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { color: var(--slate); text-decoration: none; transition: opacity 0.2s, color 0.2s; }
+  a:hover { color: var(--slate-darker); }
+  img { max-width: 100%; display: block; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  /* ── NAV ── */
+  nav.site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(247, 241, 227, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw; height: 76px;
+  }
+  .nav-back {
+    font-size: 13px; font-weight: 500; color: var(--ink-soft);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .nav-back:hover { color: var(--ink); }
+  .nav-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 26px; font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    line-height: 1;
+  }
+  .nav-name em { font-style: italic; color: var(--slate); font-weight: 500; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--slate-deep);
+    color: var(--cream);
+    padding: 140px 6vw 90px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(201, 169, 103, 0.14), transparent 55%),
+      radial-gradient(ellipse at 15% 85%, rgba(244, 236, 216, 0.07), transparent 50%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1180px; margin: 0 auto;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 11.5px; font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-gold);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px;
+    background: var(--warm-gold); opacity: 0.6;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(46px, 6vw, 84px);
+    font-weight: 500;
+    line-height: 1.04;
+    color: var(--cream);
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+    max-width: 920px;
+  }
+  .hero h1 em { font-style: italic; color: var(--warm-gold); font-weight: 400; }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.2vw, 26px);
+    color: rgba(244, 236, 216, 0.78);
+    max-width: 680px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin-top: 32px;
+  }
+  .hero-meta-item {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(244, 236, 216, 0.6);
+    padding: 7px 14px;
+    border: 1px solid rgba(244, 236, 216, 0.18);
+    border-radius: 999px;
+  }
+
+  /* ── COMPANIONS ── */
+  .companions-section {
+    background: var(--bg);
+    padding: 90px 6vw 60px;
+    border-bottom: 1px solid var(--line);
+  }
+  .companions-inner { max-width: 1280px; margin: 0 auto; }
+  .companions-eyebrow {
+    font-size: 11.5px; font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .companions-eyebrow::before {
+    content: ''; display: block;
+    width: 28px; height: 1px;
+    background: var(--slate); opacity: 0.5;
+  }
+  .companions-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 500; line-height: 1.12;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+    max-width: 800px;
+  }
+  .companions-title em { color: var(--slate); font-style: italic; }
+  .companions-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .companion-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .companion-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 26px 22px;
+    display: flex; flex-direction: column; gap: 8px;
+    color: var(--ink) !important;
+    transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
+    position: relative;
+  }
+  .companion-card:hover {
+    box-shadow: 0 18px 50px rgba(46, 56, 64, 0.10);
+    transform: translateY(-3px);
+    border-color: var(--slate);
+  }
+  .companion-card.featured {
+    background: var(--slate-darker);
+    border-color: var(--slate-darker);
+    color: var(--cream) !important;
+  }
+  .companion-card.featured:hover { border-color: var(--warm-gold); }
+  .companion-eyebrow {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--slate); margin-bottom: 4px;
+  }
+  .companion-card.featured .companion-eyebrow { color: var(--warm-gold); }
+  .companion-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500;
+    line-height: 1.18; letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .companion-card.featured .companion-card-title { color: var(--cream); }
+  .companion-desc {
+    font-size: 13px; line-height: 1.55;
+    color: var(--ink-soft);
+    flex: 1;
+    margin-bottom: 14px;
+  }
+  .companion-card.featured .companion-desc { color: rgba(244, 236, 216, 0.78); }
+  .companion-meta {
+    font-size: 10px; font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    margin-bottom: 10px;
+  }
+  .companion-card.featured .companion-meta {
+    color: rgba(244, 236, 216, 0.55);
+    border-top-color: rgba(244, 236, 216, 0.14);
+  }
+  .companion-cta {
+    font-size: 11.5px; font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--slate);
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .companion-card.featured .companion-cta { color: var(--warm-gold); }
+  .companion-card:hover .companion-cta { gap: 10px; }
+  @media (max-width: 1100px) { .companion-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .companion-grid { grid-template-columns: 1fr; } }
+
+  /* ── PLACEMAT ── */
+  .placemat-section {
+    background: var(--bg);
+    padding: 80px 6vw;
+    border-bottom: 1px solid var(--line);
+  }
+  .placemat-inner {
+    max-width: 1280px; margin: 0 auto;
+  }
+  .placemat-eyebrow {
+    font-size: 11.5px; font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .placemat-eyebrow::before {
+    content: ''; display: block;
+    width: 28px; height: 1px;
+    background: var(--slate); opacity: 0.5;
+  }
+  .placemat-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 500; line-height: 1.12;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 800px;
+  }
+  .placemat-title em { color: var(--slate); font-style: italic; }
+  .placemat-frame {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(46, 56, 64, 0.08);
+    position: relative;
+    aspect-ratio: 16 / 11;
+  }
+  .placemat-frame iframe {
+    width: 100%; height: 100%;
+    border: 0; display: block;
+  }
+  .placemat-launch {
+    margin-top: 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12.5px; font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--slate); text-transform: uppercase;
+    border-bottom: 1px solid var(--slate);
+    padding-bottom: 1px;
+  }
+  .placemat-launch:hover { color: var(--slate-darker); border-color: var(--slate-darker); }
+  .placemat-caption {
+    font-size: 13px; font-style: italic;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 18px;
+  }
+
+  /* ── SECTIONS ── */
+  section.s { padding: 110px 6vw; }
+  .s-inner { max-width: 1080px; margin: 0 auto; }
+  .s-eyebrow {
+    font-size: 11.5px; font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .s-eyebrow::before {
+    content: ''; display: block;
+    width: 28px; height: 1px;
+    background: var(--slate); opacity: 0.5;
+  }
+  .s-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 500; line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 22px;
+    letter-spacing: -0.025em;
+    max-width: 760px;
+  }
+  .s-title em { color: var(--slate); font-style: italic; }
+  .s-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 640px;
+    margin-bottom: 48px;
+    letter-spacing: -0.005em;
+  }
+
+  /* ── TIER STACK ── */
+  .tier-stack { display: flex; flex-direction: column; gap: 20px; }
+  .tier {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 32px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 36px 40px;
+    align-items: start;
+    transition: transform 0.22s, box-shadow 0.22s;
+  }
+  .tier:hover { transform: translateY(-2px); box-shadow: 0 18px 50px rgba(46, 56, 64, 0.07); }
+  .tier-tag {
+    background: var(--slate);
+    color: var(--cream);
+    border-radius: 12px;
+    padding: 22px 22px 20px;
+    text-align: center;
+  }
+  .tier.t2 .tier-tag { background: var(--warm-gold); color: var(--ink); }
+  .tier.t3 .tier-tag { background: var(--terracotta); }
+  .tier-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 500;
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+  .tier-num em { font-style: italic; }
+  .tier-name {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    opacity: 0.85;
+  }
+  .tier-pct {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .tier-pct-label {
+    font-size: 9.5px; letter-spacing: 0.14em;
+    text-transform: uppercase; opacity: 0.75;
+    margin-top: 4px;
+  }
+  .tier-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 500;
+    color: var(--ink); margin-bottom: 12px;
+    line-height: 1.2; letter-spacing: -0.02em;
+  }
+  .tier-content p {
+    font-size: 15px; line-height: 1.65;
+    color: var(--ink-soft); margin-bottom: 14px;
+  }
+  .tier-lanes {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    margin-top: 14px;
+  }
+  .lane {
+    background: var(--cream-soft);
+    border-left: 3px solid var(--slate);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+  }
+  .lane.behavior { border-left-color: var(--terracotta); }
+  .lane-label {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--slate); margin-bottom: 6px;
+  }
+  .lane.behavior .lane-label { color: var(--terracotta); }
+  .lane-text {
+    font-size: 13px; line-height: 1.55; color: var(--ink-soft);
+  }
+  @media (max-width: 820px) {
+    .tier { grid-template-columns: 1fr; gap: 22px; }
+    .tier-lanes { grid-template-columns: 1fr; }
+  }
+
+  /* ── CALLOUT BLOCKS (for 80% rule, ICEL, etc.) ── */
+  .callout-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    margin-top: 12px;
+  }
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 36px 40px;
+    border-top: 3px solid var(--slate);
+  }
+  .callout.gold { border-top-color: var(--warm-gold); }
+  .callout-eyebrow {
+    font-size: 10.5px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--slate); margin-bottom: 12px;
+  }
+  .callout.gold .callout-eyebrow { color: var(--warm-gold); }
+  .callout h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 500;
+    color: var(--ink); line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+  .callout h3 em { color: var(--slate); font-style: italic; }
+  .callout.gold h3 em { color: var(--warm-gold); }
+  .callout p {
+    font-size: 14.5px; line-height: 1.65;
+    color: var(--ink-soft); margin-bottom: 14px;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout strong { color: var(--ink); font-weight: 600; }
+  @media (max-width: 820px) { .callout-grid { grid-template-columns: 1fr; } }
+
+  /* ── ICEL LIST ── */
+  .icel-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    margin-top: 28px;
+  }
+  .icel-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 26px 24px;
+    transition: transform 0.22s, box-shadow 0.22s;
+  }
+  .icel-card:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(46,56,64,0.06); }
+  .icel-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 500; font-style: italic;
+    color: var(--slate);
+    line-height: 1; letter-spacing: -0.04em;
+    margin-bottom: 10px;
+  }
+  .icel-card:nth-child(1) .icel-letter { color: var(--slate); }
+  .icel-card:nth-child(2) .icel-letter { color: var(--warm-gold); }
+  .icel-card:nth-child(3) .icel-letter { color: var(--sage); }
+  .icel-card:nth-child(4) .icel-letter { color: var(--terracotta); }
+  .icel-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500;
+    color: var(--ink); margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .icel-desc {
+    font-size: 13px; line-height: 1.6; color: var(--ink-soft);
+  }
+  @media (max-width: 900px) { .icel-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .icel-grid { grid-template-columns: 1fr; } }
+
+  /* ── RESEARCH CITATIONS ── */
+  .research-section { background: var(--cream-soft); }
+  .research-list { columns: 2; column-gap: 48px; column-rule: 1px solid var(--line); }
+  .research-item {
+    break-inside: avoid; padding: 14px 0;
+    font-size: 13.5px; line-height: 1.55;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+  }
+  .research-item:first-child { padding-top: 0; }
+  .research-item strong { color: var(--ink); font-weight: 600; }
+  @media (max-width: 720px) { .research-list { columns: 1; } }
+
+  /* ── DOWNLOAD CTA ── */
+  .download {
+    background: var(--slate-darker);
+    color: var(--cream);
+    padding: 100px 6vw;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .download::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201, 169, 103, 0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .download-inner { position: relative; max-width: 720px; margin: 0 auto; }
+  .download-eyebrow {
+    font-size: 11.5px; font-weight: 500;
+    color: var(--warm-gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .download h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 500; color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+  }
+  .download h2 em { color: var(--warm-gold); font-style: italic; }
+  .download p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: rgba(244, 236, 216, 0.78);
+    line-height: 1.5;
+    margin-bottom: 36px;
+    letter-spacing: -0.01em;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border-radius: 999px;
+    font-size: 13.5px; font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: transform 0.18s, background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .btn-cream { background: var(--cream); color: var(--ink) !important; }
+  .btn-cream:hover { background: var(--surface); transform: translateY(-1px); }
+  .btn-ghost-cream {
+    color: var(--cream) !important;
+    border: 1px solid rgba(244, 236, 216, 0.3);
+    background: transparent;
+  }
+  .btn-ghost-cream:hover {
+    border-color: var(--cream);
+    background: rgba(244, 236, 216, 0.08);
+  }
+  .btn svg { width: 14px; height: 14px; }
+  .download-actions {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .license-note {
+    font-size: 12px; color: rgba(244, 236, 216, 0.55);
+    letter-spacing: 0.04em;
+    padding-top: 24px;
+    border-top: 1px solid rgba(244, 236, 216, 0.12);
+  }
+  .license-note strong { color: var(--warm-gold); font-weight: 600; }
+
+  footer {
+    background: var(--ink);
+    color: rgba(244, 236, 216, 0.4);
+    padding: 26px 6vw;
+    font-size: 12px;
+    text-align: center;
+  }
+  footer a { color: rgba(244, 236, 216, 0.55) !important; }
+  footer a:hover { color: rgba(244, 236, 216, 0.85) !important; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="lean.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M15 18l-6-6 6-6"/></svg>
+    Back to portfolio
+  </a>
+  <a href="lean.html" class="nav-name">nicole simmons<em>.</em></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">ForwardEd · Field Guide</div>
+    <h1>The MTSS Intervention Framework, <em>2026–27.</em></h1>
+    <p class="hero-tagline">A practitioner field guide to running a Multi-Tiered System of Supports that actually survives contact with the school day. Three tiers. Parallel academic and behavior/SEL lanes. Built around evidence-based thresholds, not vibes.</p>
+    <div class="hero-meta">
+      <span class="hero-meta-item">3 tiers · 2 lanes</span>
+      <span class="hero-meta-item">80% Tier 1 benchmark</span>
+      <span class="hero-meta-item">ICEL diagnostic</span>
+      <span class="hero-meta-item">30+ cited sources</span>
+      <span class="hero-meta-item">CC BY-NC 4.0</span>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANIONS · 4 cards in order -->
+<section class="companions-section">
+  <div class="companions-inner">
+    <div class="companions-eyebrow">The Toolkit</div>
+    <h2 class="companions-title">Four practitioner companions, <em>one framework.</em></h2>
+    <p class="companions-lead">Each one does a different job — the implementation guide for site teams, the quick-reference card for classroom teachers, the conference script for administrators, and the placemat for the moment of need.</p>
+
+    <div class="companion-grid">
+      <!-- 1. Implementation Guide -->
+      <a class="companion-card featured" href="https://forwarded.consulting/papers/mtss-implementation-guide" target="_blank" rel="noopener">
+        <div class="companion-eyebrow">Site Companion · 01</div>
+        <div class="companion-card-title">Implementation Guide</div>
+        <div class="companion-desc">Site-leader and teacher-team setup companion. Tier 1 fidelity, essential standards, PLC structure, intervention staffing, behavioral non-negotiables, and the IEP/504 boundary.</div>
+        <div class="companion-meta">~12 min read · 2026</div>
+        <div class="companion-cta">Read the Guide →</div>
+      </a>
+
+      <!-- 2. Teacher Quick-Reference Card -->
+      <a class="companion-card" href="https://forwarded.consulting/papers/mtss-quick-reference-card" target="_blank" rel="noopener">
+        <div class="companion-eyebrow">Teacher Companion · 02</div>
+        <div class="companion-card-title">Quick-Reference Card</div>
+        <div class="companion-desc">Layer 1 prevention practices and the Layer 2 response sequence for classroom teachers. Read on screen or print as a two-sided 5.5×8.5 card — fits in a planner pocket.</div>
+        <div class="companion-meta">Print · 5.5×8.5 · double-sided</div>
+        <div class="companion-cta">Open the Card →</div>
+      </a>
+
+      <!-- 3. Admin Conference Script -->
+      <a class="companion-card" href="https://forwarded.consulting/papers/mtss-admin-conference-script" target="_blank" rel="noopener">
+        <div class="companion-eyebrow">Admin Companion · 03</div>
+        <div class="companion-card-title">Admin Conference Script</div>
+        <div class="companion-desc">A 20-minute administrator script bundling investigation, discipline, restorative practice, family contact, and teacher brief into a single meeting that actually happens.</div>
+        <div class="companion-meta">20 min · single meeting</div>
+        <div class="companion-cta">Open the Script →</div>
+      </a>
+
+      <!-- 4. Placemat -->
+      <a class="companion-card" href="#placemat">
+        <div class="companion-eyebrow">In-the-Moment Tool · 04</div>
+        <div class="companion-card-title">The Placemat</div>
+        <div class="companion-desc">The visual flowchart practitioners reach for in the moment. Layers academic and behavior/SEL supports in alignment with PBIS, district MTSS, and site commitments.</div>
+        <div class="companion-meta">Visual tool · Print &amp; display</div>
+        <div class="companion-cta">View the Placemat ↓</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PLACEMAT -->
+<section class="placemat-section" id="placemat">
+  <div class="placemat-inner">
+    <div class="placemat-eyebrow">The Placemat</div>
+    <h2 class="placemat-title">One page. Three tiers. <em>Two parallel lanes</em> for academic and behavior/SEL support.</h2>
+    <div class="placemat-frame">
+      <iframe src="https://forwardedmtss.netlify.app" title="MTSS Intervention Flowchart — live placemat" loading="lazy"></iframe>
+    </div>
+    <p class="placemat-caption">
+      MTSS Intervention Flowchart, 2026–27 · Live from
+      <a href="https://forwardedmtss.netlify.app" target="_blank" rel="noopener" style="color: var(--slate); border-bottom: 1px solid currentColor;">forwardedmtss.netlify.app</a>
+      · CC BY-NC 4.0
+    </p>
+    <a class="placemat-launch" href="https://forwardedmtss.netlify.app" target="_blank" rel="noopener">
+      Open the placemat in a new tab →
+    </a>
+  </div>
+</section>
+
+<!-- TIER ARCHITECTURE -->
+<section class="s">
+  <div class="s-inner">
+    <div class="s-eyebrow">Tier Architecture</div>
+    <h2 class="s-title">Three tiers, <em>each doing its job.</em></h2>
+    <p class="s-lead">When the architecture is sound, Tier 1 reaches roughly 80%, Tier 2 reaches 15%, and Tier 3 serves the few who need intensive support. When that math breaks, the system tells you exactly where to look.</p>
+
+    <div class="tier-stack">
+      <!-- TIER 1 -->
+      <div class="tier t1">
+        <div class="tier-tag">
+          <div class="tier-num"><em>I</em></div>
+          <div class="tier-name">Tier 1 · Universal</div>
+          <div class="tier-pct">≈80%</div>
+          <div class="tier-pct-label">of students</div>
+        </div>
+        <div class="tier-content">
+          <h3>Universal supports for every student.</h3>
+          <p>The instructional and behavioral foundation that <strong>every student</strong> receives. High-quality core curriculum, evidence-based instructional moves, and proactive behavior expectations — applied consistently across the school.</p>
+          <div class="tier-lanes">
+            <div class="lane">
+              <div class="lane-label">Academic lane</div>
+              <div class="lane-text">High-quality core instruction, differentiation, common formative assessment, universal screening 3×/year.</div>
+            </div>
+            <div class="lane behavior">
+              <div class="lane-label">Behavior / SEL lane</div>
+              <div class="lane-text">Schoolwide behavior expectations, SEL curriculum, classroom routines, restorative practices baseline.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 2 -->
+      <div class="tier t2">
+        <div class="tier-tag">
+          <div class="tier-num"><em>II</em></div>
+          <div class="tier-name">Tier 2 · Strategic</div>
+          <div class="tier-pct">≈15%</div>
+          <div class="tier-pct-label">of students</div>
+        </div>
+        <div class="tier-content">
+          <h3>Targeted, time-bound support — <em>on top of</em> Tier 1.</h3>
+          <p>Small-group instruction or behavior support layered <strong>on top of</strong> the universal experience — never as a replacement for it. Time-bound, progress-monitored, and exited as students respond.</p>
+          <div class="tier-lanes">
+            <div class="lane">
+              <div class="lane-label">Academic lane</div>
+              <div class="lane-text">Targeted small-group reading or math intervention, double-dose blocks, structured scaffolds aligned to core content.</div>
+            </div>
+            <div class="lane behavior">
+              <div class="lane-label">Behavior / SEL lane</div>
+              <div class="lane-text">Check-In/Check-Out, small-group SEL, restorative circles, mentor matching, structured de-escalation routines.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 3 -->
+      <div class="tier t3">
+        <div class="tier-tag">
+          <div class="tier-num"><em>III</em></div>
+          <div class="tier-name">Tier 3 · Intensive</div>
+          <div class="tier-pct">≤5–10%</div>
+          <div class="tier-pct-label">of students</div>
+        </div>
+        <div class="tier-content">
+          <h3>Intensive, individualized — and progress-monitored weekly.</h3>
+          <p>The smallest tier by design. Highly individualized, evidence-based, and supported by frequent progress monitoring. Tier 3 is where the most specialized expertise and the most coordinated team-based decisions live.</p>
+          <div class="tier-lanes">
+            <div class="lane">
+              <div class="lane-label">Academic lane</div>
+              <div class="lane-text">1:1 or 1:2 specialized instruction, intensive intervention with daily progress monitoring, individualized goals.</div>
+            </div>
+            <div class="lane behavior">
+              <div class="lane-label">Behavior / SEL lane</div>
+              <div class="lane-text">FBA + BIP, wraparound team meetings, individualized counseling, family-school coordination, safety plans.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 80% RULE + ICEL -->
+<section class="s" style="background: var(--cream-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="s-inner">
+    <div class="s-eyebrow">The Two Disciplines</div>
+    <h2 class="s-title">When Tier 1 isn't reaching 80%, <em>diagnose the system first.</em></h2>
+    <p class="s-lead">MTSS isn't a referral pipeline. It's a diagnostic system. These two disciplines are what keep it honest.</p>
+
+    <div class="callout-grid">
+      <div class="callout">
+        <div class="callout-eyebrow">The threshold</div>
+        <h3>The <em>80% rule.</em></h3>
+        <p>Tier 1 — your universal experience — should serve at least <strong>80% of learners</strong> well. If fewer than 80% of students are succeeding with Tier 1 alone, you do not refer the 20% upward. <strong>You diagnose Tier 1 itself.</strong></p>
+        <p>This is the principle that flips a deficit-based system into an architecture-based one. The data below the threshold is a signal to review fidelity — not a referral trigger.</p>
+      </div>
+
+      <div class="callout gold">
+        <div class="callout-eyebrow">The diagnostic</div>
+        <h3>The <em>ICEL framework.</em></h3>
+        <p>When Tier 1 isn't reaching 80%, MTSS asks <strong>where the system</strong> is failing — before asking <strong>who</strong> needs more support. The diagnostic is Instructional Framework → Curriculum → Environment → Learner. <strong>In that order.</strong></p>
+        <p>Without ICEL, the 80% rule is just a number. With ICEL, it becomes a non-blaming root-cause framework that protects students, supports educators, and surfaces the real lever for change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICEL DETAIL -->
+<section class="s">
+  <div class="s-inner">
+    <div class="s-eyebrow">ICEL — The Diagnostic Order</div>
+    <h2 class="s-title">Look at the system <em>before</em> the learner.</h2>
+    <p class="s-lead">The order matters. Skipping straight to the learner is what breaks an MTSS system from inside.</p>
+
+    <div class="icel-grid">
+      <div class="icel-card">
+        <div class="icel-letter">I</div>
+        <div class="icel-name">Instructional Framework</div>
+        <div class="icel-desc">Is there a coherent, system-level instructional framework supporting practice across classrooms?</div>
+      </div>
+      <div class="icel-card">
+        <div class="icel-letter">C</div>
+        <div class="icel-name">Curriculum</div>
+        <div class="icel-desc">Is the content itself standards-aligned, paced realistically, and high-quality enough to do the job?</div>
+      </div>
+      <div class="icel-card">
+        <div class="icel-letter">E</div>
+        <div class="icel-name">Environment</div>
+        <div class="icel-desc">Are the conditions of learning — time-on-task, classroom climate, schedule structure — protecting student access?</div>
+      </div>
+      <div class="icel-card">
+        <div class="icel-letter">L</div>
+        <div class="icel-name">Learner</div>
+        <div class="icel-desc">Last, not first. Examined only after the prior three have been ruled out as the system-level cause.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH BASE -->
+<section class="s research-section">
+  <div class="s-inner">
+    <div class="s-eyebrow">Research Foundation</div>
+    <h2 class="s-title">The framework is anchored in <em>30+ peer-reviewed sources.</em></h2>
+    <p class="s-lead">A field guide is only as defensible as the research behind it. These are the foundational citations.</p>
+
+    <div class="research-list">
+      <div class="research-item"><strong>Fuchs &amp; Fuchs (2006).</strong> Introduction to Response to Intervention: What, why, and how valid is it? Reading Research Quarterly, 41(1).</div>
+      <div class="research-item"><strong>IRIS Center (2022).</strong> Multi-tiered systems of support: A comprehensive framework for implementing tiered supports in schools.</div>
+      <div class="research-item"><strong>Zhang, Jin, Davis &amp; Stecker (2023).</strong> Implementing Tier 2 reading interventions: A meta-analysis. Journal of Learning Disabilities.</div>
+      <div class="research-item"><strong>Thomas, Lembke &amp; Gandhi (2023).</strong> Implementation guidance for Tier 3 intensive intervention.</div>
+      <div class="research-item"><strong>NCII / AIR (2024).</strong> National Center on Intensive Intervention — Tier 3 implementation framework and progress-monitoring tools.</div>
+      <div class="research-item"><strong>CEEDAR Center.</strong> Evidence-based intervention practice profiles, IRIS-aligned modules.</div>
+      <div class="research-item"><strong>Center on PBIS.</strong> Tiered behavior support frameworks and Tier 2 systems guidance.</div>
+      <div class="research-item"><strong>IES What Works Clearinghouse.</strong> Practice guides on response to intervention and tiered supports.</div>
+      <div class="research-item"><strong>Hattie (2009, 2017).</strong> Visible Learning meta-analyses — collective teacher efficacy ES 1.57.</div>
+      <div class="research-item"><strong>Fisher &amp; Frey.</strong> Teacher Clarity framework — learning intentions, success criteria, and checks for understanding (Hattie ES 0.75).</div>
+      <div class="research-item"><strong>Bryk, Sebring, Allensworth, Luppescu &amp; Easton (2010).</strong> Organizing schools for improvement: Lessons from Chicago. University of Chicago Press.</div>
+      <div class="research-item"><strong>Cook et al. (2018).</strong> Proactive classroom management strategies and behavioral disengagement.</div>
+      <div class="research-item"><strong>MacSuga-Gage &amp; Simonsen (2015).</strong> Effective teaching practices that promote a positive classroom environment.</div>
+      <div class="research-item"><strong>Caldarella et al. (2020).</strong> Praise-to-reprimand ratios and student engagement outcomes.</div>
+      <div class="research-item"><strong>Hawken &amp; Horner (2003).</strong> Check-In/Check-Out — evaluation of a targeted group intervention.</div>
+      <div class="research-item"><strong>Wlodkowski (1983).</strong> The 2×10 relationship-building strategy.</div>
+      <div class="research-item"><strong>Augustine et al. (2018).</strong> RAND restorative practices implementation evaluation.</div>
+      <div class="research-item"><strong>Newmann, Smith, Allensworth &amp; Bryk (2001).</strong> Instructional program coherence.</div>
+      <div class="research-item"><strong>Cobb, Jackson, Henrick &amp; Smith (2018).</strong> Systems for instructional improvement.</div>
+      <div class="research-item"><strong>Reardon (2016).</strong> Stanford CEPA — district SES and academic achievement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<section class="download">
+  <div class="download-inner">
+    <div class="download-eyebrow">Take it with you</div>
+    <h2>Use the placemat. <em>Adapt the framework.</em></h2>
+    <p>The placemat is designed for school sites, district teams, and practitioners ready to put a tiered system to work. Print it, share it, adapt it for your context.</p>
+    <div class="download-actions">
+      <a class="btn btn-cream" href="images/mtss-placemat.png" target="_blank" download>
+        Download the placemat
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </a>
+      <a class="btn btn-ghost-cream" href="https://forwarded.consulting" target="_blank" rel="noopener">More on ForwardEd</a>
+    </div>
+    <div class="license-note"><strong>License:</strong> Creative Commons CC BY-NC 4.0. Share with attribution. Adapt for non-commercial use. Commercial redistribution requires written permission.</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Nicole Simmons, M.Ed. · ForwardEd Field Guide · <a href="lean.html">Back to portfolio</a>
+</footer>
+
+</body>
+</html>
